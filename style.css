@@ -1,0 +1,352 @@
+:root {
+    --burned-yellow: #b97d26;
+    --dark-red: #a51512;
+    --orange-yellow: #e69823;
+    --light-beige: #eccca5;
+    --white: #fefefe;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    background:#2e2e2e;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 0;
+    background-color: #b70608;
+    position: relative;
+    z-index: 100;
+}
+.navbar a {
+    position: relative;
+    font-weight: 600;
+    color: #fefefe;
+    padding: 6px 0;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+
+    /* brilho leve no texto */
+    text-shadow: 0 0 6px rgba(255, 160, 80, 0.4);
+
+    /* transição suave */
+    transition: color 0.35s ease, text-shadow 0.35s ease;
+}
+
+/* linha animada com efeito “energia” */
+.navbar a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 3px;
+
+    /* linha inicialmente invisível */
+    transform: scaleX(0);
+    transform-origin: left;
+    opacity: 0;
+
+    /* gradiente “premium” */
+    background: linear-gradient(90deg,
+        #ff9b40,
+        #ffcc66,
+        #ff9b40
+    );
+
+    border-radius: 3px;
+
+    /* animação */
+    transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.navbar a:hover {
+    color: #ffe7ca;
+
+    text-shadow: 
+        0 0 10px rgba(255, 190, 120, 0.7),
+        0 0 20px rgba(255, 150, 80, 0.5);
+}
+
+.navbar a:hover::after {
+    transform: scaleX(1);
+    opacity: 1;
+}
+
+.navbar .logo img {
+    height: 50px;
+    margin: 20px;
+    margin-right: 40px;
+}
+
+.navbar .nav {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 20px;
+    padding: 20px;
+    text-decoration: none;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 40px;
+    position: relative;
+}
+/* From Uiverse.io by aCHEN-design */ 
+.button {
+    /* ➡️ POSICIONAMENTO ABSOLUTO RESTAURADO ⬅️ */
+    position: absolute; 
+    left: 9.4%; /* Ajuste horizontal. Mude este valor se precisar mover para a direita ou esquerda. */
+    top: 114%; /* Ajuste vertical. Mude este valor se precisar subir ou descer. */
+    transform: translateY(-50%); /* Ajuda a centralizar o botão verticalmente no ponto 'top' */
+    z-index: 50; 
+    
+    /* Propriedades de estilo originais */
+    border-radius: 8px;
+    border: 1px solid #b70608;
+    background: #ffc518;
+    box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(15px);
+    
+    transition: all 0.3s ease-in-out;
+
+    padding-block: 14px;
+    padding-inline: 1.25rem;
+    padding: 11.5px 53px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #b70608;
+    gap: 10px;
+
+    outline: none;
+    overflow: hidden;
+    font-size: 15px;
+}
+/* ... (O resto do CSS do .button, .icon, e @keyframes permanece inalterado) ... */
+
+.icon {
+  width: 24px;
+  height: 24px;
+  transition: all 0.3s ease-in-out;
+}
+
+.button:hover {
+  box-shadow: 0px 4px 0px 0px rgba(0, 0, 0, 0.5);
+}
+
+.button:hover .icon {
+  transform: translate(4px);
+}
+
+.button:hover::before {
+  animation: shine 1s ease-out infinite;
+}
+
+.button::before {
+  content: "";
+  position: fixed;
+  width: 100px;
+  height: 100%;
+  background-image: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 30%,
+    rgba(221, 14, 14, 0.8),
+    rgba(255, 255, 255, 0) 70%
+  );
+  top: 0;
+  left: -100px;
+  opacity: 0.6;
+}
+
+@keyframes shine {
+  0% {
+    left: -100px;
+  }
+
+  60% {
+    left: 100%;
+  }
+
+  to {
+    left: 100%;
+  }
+}
+
+.carousel-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 100px 0;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 40px;
+    transition: transform 0.9s ease;
+}
+.menu {
+    text-align: center; /* Centraliza o texto */
+    font-size: 32px; /* Aumenta o tamanho para destaque */
+    padding-bottom: 60px; 
+    margin: 0;
+    color: white; /* Usa a cor vermelha escura definida (var(--dark-red): #a51512) */
+    text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+.card {
+    width: 200px;
+    height: 220px;
+    background: #191919;
+    border-radius: 26px;
+    padding: 20px;
+    text-align: center;
+    filter: grayscale(1);
+    transform: scale(0.9);
+    color: #c5c5c5;
+    transition: 0.4s;
+    opacity: 0.6;
+    position: relative;
+    padding-top: 80px;
+    overflow: visible;
+}
+
+.card.active {
+    background: #e7aa4d;
+    filter: grayscale(0);
+    transform: scale(1.18);
+    color: #000;
+    opacity: 1;
+    z-index: 10;
+}
+
+.card img {
+    height: 180px;
+    width: auto;
+    position: absolute;
+    top: -90px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+    pointer-events: none;
+    object-fit: contain;
+    filter: drop-shadow(0px 8px 18px rgba(0,0,0,0.5));
+}
+
+.card h3 {
+    margin: 10px 0 5px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.card .desc {
+    font-size: 13px;
+    line-height: 1.3;
+    height: 60px;
+    text-align: justify;
+}
+
+.card .price {
+    margin-top: 12px;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+/*/* From Uiverse.io by JaydipPrajapati1910 */ 
+.button-buy {
+    --button-color: #b70608;
+    --tooltip-color: #fff;
+    width: 100px;
+    height: 35px;
+    background: var(--button-color);
+    position: relative;
+    text-align: center;
+    border-radius: 0.45em;
+    font-family: "Arial";
+    transition: background 0.3s;
+    align-items: center;
+    left: 23%;
+}
+.button-buy::after,.button-buy::before {
+    transition: all 0.5s;
+}
+
+.text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-wrapper,.text,.icon {
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    color: #fff;
+}
+
+.text {
+    top: 0
+}
+
+.text,.icon {
+    transition: top 0.5s;
+}
+
+.icon {
+    color: #fff;
+    top: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.button-buy:hover .text {
+    top: -100%;
+}
+
+.button-buy:hover .icon {
+    top: 0;
+}
+
+.more-btn {
+    /* Propriedades de estilo do botão "Peça agora" */
+    background: var(--orange-yellow);
+    color: #000;
+    font-weight: bold;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.3s;
+    
+    /* ⬅️ RESTAURANDO POSIÇÃO ORIGINAL ⬅️ */
+    display: block; /* Ocupa a largura total (ou a necessária) */
+    margin: 40px auto; /* Centraliza horizontalmente e adiciona margem superior/inferior */
+    position: relative; /* Voltando para o posicionamento normal do fluxo */
+    z-index: auto; /* Z-index não é mais necessário */
+    transform: none; /* Remove a transformação de centralização vertical */
+    left: auto; /* Remove o posicionamento da esquerda */
+    top: auto; /* Remove o posicionamento do topo */
+    /* ------------------------------------------- */
+}
+
+.more-btn:hover {
+    transform: scale(1.05);
+}
+
