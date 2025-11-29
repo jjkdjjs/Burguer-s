@@ -20,3 +20,29 @@ cards.forEach((card, i) => {
         updateCards();
     });
 });
+function initMap() {
+    // Coordenadas para São Paulo
+    const localizacao = { lat: -23.5505, lng: -46.6333 };
+
+    // Cria uma nova instância do mapa e a insere na div 'mapa'
+    const map = new google.maps.Map(document.getElementById("mapa"), {
+        zoom: 12, // Nível de zoom
+        center: localizacao,
+    });
+
+    // Adiciona um marcador no mapa
+    new google.maps.Marker({
+        position: localizacao,
+        map: map,
+        title: "São Paulo"
+    });
+}
+document.addEventListener("scroll", () => {
+    const box = document.getElementById("socialBox");
+
+    if (window.scrollY > 200) {
+        box.classList.add("show");
+    } else {
+        box.classList.remove("show");
+    }
+});
