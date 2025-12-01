@@ -100,103 +100,18 @@ body {
     position: relative;
 }
 
-/* From Uiverse.io by aCHEN-design */
-.button {
-    /* ➡️ POSICIONAMENTO ABSOLUTO RESTAURADO ⬅️ */
-    position: absolute;
-    left: 9.4%;
-    /* Ajuste horizontal. Mude este valor se precisar mover para a direita ou esquerda. */
-    top: 114%;
-    /* Ajuste vertical. Mude este valor se precisar subir ou descer. */
-    transform: translateY(-50%);
-    /* Ajuda a centralizar o botão verticalmente no ponto 'top' */
-    z-index: 50;
-
-    /* Propriedades de estilo originais */
-    border-radius: 8px;
-    border: 1px solid #b70608;
-    background: #ffc518;
-    box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(15px);
-
-    transition: all 0.3s ease-in-out;
-
-    padding-block: 14px;
-    padding-inline: 1.25rem;
-    padding: 11.5px 53px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    color: #b70608;
-    gap: 10px;
-
-    outline: none;
-    overflow: hidden;
-    font-size: 15px;
-}
-
-/* ... (O resto do CSS do .button, .icon, e @keyframes permanece inalterado) ... */
-
-.icon {
-    width: 24px;
-    height: 24px;
-    transition: all 0.3s ease-in-out;
-}
-
-.button:hover {
-    box-shadow: 0px 4px 0px 0px rgba(0, 0, 0, 0.5);
-}
-
-.button:hover .icon {
-    transform: translate(4px);
-}
-
-.button:hover::before {
-    animation: shine 1s ease-out infinite;
-}
-
-.button::before {
-    content: "";
-    position: fixed;
-    width: 100px;
-    height: 100%;
-    background-image: linear-gradient(120deg,
-            rgba(255, 255, 255, 0) 30%,
-            rgba(221, 14, 14, 0.8),
-            rgba(255, 255, 255, 0) 70%);
-    top: 0;
-    left: -100px;
-    opacity: 0.6;
-}
-
-@keyframes shine {
-    0% {
-        left: -100px;
+    .carousel-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 100px 0;
     }
 
-    60% {
-        left: 100%;
+    .carousel-track {
+        display: flex;
+        gap: 40px;
+        transition: transform 0.9s ease;
     }
-
-    to {
-        left: 100%;
-    }
-}
-
-.carousel-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    padding: 100px 0;
-}
-
-.carousel-track {
-    display: flex;
-    gap: 40px;
-    transition: transform 0.9s ease;
-}
 
 .menu {
     text-align: center;
@@ -375,34 +290,42 @@ body {
     /* Centralização em um bloco de 800px */
     max-width: 800px;
     width: 90%;
-    margin-left: 20px; /* Centraliza */
-    margin-right: auto; /* Centraliza */
-    
+    margin-left: 20px;
+    /* Centraliza */
+    margin-right: auto;
+    /* Centraliza */
+
     /* Layout interno: Horário e Localização lado a lado */
     display: flex;
     justify-content: space-around;
-    gap: 40px; /* Aumenta o espaço entre as colunas */
-    
-    padding: 40px 20px; /* Padding interno */
-    margin-top: 70px; /* Espaço do topo */
+    gap: 40px;
+    /* Aumenta o espaço entre as colunas */
+
+    padding: 40px 20px;
+    /* Padding interno */
+    margin-top: 70px;
+    /* Espaço do topo */
     color: white;
     top: 77px;
-    
+
     position: relative;
     z-index: 2;
-    
+
     /* Contorno sutil para o bloco (opcional, adicionei para destaque) */
-    border: 1px solid rgba(255, 255, 255, 0.1); 
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
-    background-color: rgba(30, 30, 30, 0.8); /* Fundo semi-transparente escuro */
+    background-color: rgba(30, 30, 30, 0.8);
+    /* Fundo semi-transparente escuro */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 /* Blocos Individuais: Garante o alinhamento de texto e flexibilidade */
 .hora,
 .loc {
-    flex: 1; /* Ocupam espaço igual */
-    text-align: center; /* Centraliza o texto dentro da coluna */
+    flex: 1;
+    /* Ocupam espaço igual */
+    text-align: center;
+    /* Centraliza o texto dentro da coluna */
     position: relative;
     padding: 0 20px;
 }
@@ -412,27 +335,34 @@ body {
 .hora::after {
     content: '';
     position: absolute;
-    top: 10%; /* Início no topo */
-    right: -20px; /* Posiciona no meio da margem de 40px */
-    height: 80%; /* Altura da linha */
+    top: 10%;
+    /* Início no topo */
+    right: -20px;
+    /* Posiciona no meio da margem de 40px */
+    height: 80%;
+    /* Altura da linha */
     width: 2px;
-    
+
     /* Gradiente sutil para a divisória */
-    background: linear-gradient(to bottom, 
-        rgba(255, 255, 255, 0.1), /* Sutil no topo */
-        var(--orange-yellow, #e69823), /* Cor de destaque no centro */
-        rgba(255, 255, 255, 0.1) /* Sutil no rodapé */
-    );
+    background: linear-gradient(to bottom,
+            rgba(255, 255, 255, 0.1),
+            /* Sutil no topo */
+            var(--orange-yellow, #e69823),
+            /* Cor de destaque no centro */
+            rgba(255, 255, 255, 0.1)
+            /* Sutil no rodapé */
+        );
     border-radius: 1px;
 }
 
 /* Títulos: Estilo de destaque (usando uma cor clara de acento) */
-.hora-titulo, 
+.hora-titulo,
 .loc-titulo {
     font-size: 1.8em;
     font-weight: 700;
     margin-bottom: 15px;
-    color: var(--orange-yellow, #e69823); /* Cor de destaque para os títulos */
+    color: var(--orange-yellow, #e69823);
+    /* Cor de destaque para os títulos */
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -441,8 +371,10 @@ body {
 .textinho {
     font-size: 1.1em;
     margin: 8px 0;
-    color: var(--light-beige, #eccca5); /* Cor mais suave para o corpo do texto */
+    color: var(--light-beige, #eccca5);
+    /* Cor mais suave para o corpo do texto */
 }
+
 .mapas-container-row {
     /* FLUTUA O MAPA PARA A DIREITA */
     float: right;
@@ -487,16 +419,18 @@ body {
     border: none;
     display: block;
 }
-.caixa{
-    display:block;
+
+.caixa {
+    display: block;
     background: #a51512;
     width: 100%;
     height: 450px;
     margin-top: 250px;
-    position:absolute;
+    position: absolute;
     align-items: center;
     justify-content: center;
 }
+
 /* From Uiverse.io by mrhyddenn */
 .container-card-box {
     display: flex;
@@ -542,7 +476,7 @@ body {
 .card_box:hover {
     transform: scale(1.05);
     /* Efeito flutuante mais agradável */
-    box-shadow: 0 40px 70px , 0 0 20px var(--dark-red);
+    box-shadow: 0 40px 70px, 0 0 20px var(--dark-red);
 }
 
 .card-titulo {
@@ -572,16 +506,20 @@ body {
     /* Centralizado ou justificado, centralizado é mais limpo */
     padding: 0 5px;
 }
+
 .section-avaliacoes {
-    position: relative; /* Essencial para posicionar elementos internos */
+    position: relative;
+    /* Essencial para posicionar elementos internos */
     width: 100%;
-    min-height: 700px; /* Altura mínima para mostrar a imagem e os cards */
+    min-height: 700px;
+    /* Altura mínima para mostrar a imagem e os cards */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 80px 0; /* Espaço para o topo e base da seção */
-    
+    padding: 80px 0;
+    /* Espaço para o topo e base da seção */
+
     z-index: 10;
 }
 
@@ -592,23 +530,27 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden; 
-    z-index: 1; /* Fica abaixo dos cards */
+    overflow: hidden;
+    z-index: 1;
+    /* Fica abaixo dos cards */
 }
 
 .imagem-ava {
     width: 100%;
     height: auto;
-    object-fit: cover; /* Cobre a área sem distorcer */
+    object-fit: cover;
+    /* Cobre a área sem distorcer */
     object-position: center;
-    opacity: 0.5; /* Deixa a imagem mais escura/sutil */
+    opacity: 0.5;
+    /* Deixa a imagem mais escura/sutil */
 }
 
 /* Título da Seção */
 .titulo-secao-ava {
     position: relative;
     font-size: 3.2em;
-    color: var(--orange-yellow, #e69823); /* Usa a variável do ROOT */
+    color: var(--orange-yellow, #e69823);
+    /* Usa a variável do ROOT */
     margin-bottom: 50px;
     text-shadow: 0 0 10px rgba(255, 160, 80, 0.5);
     font-weight: 800;
@@ -619,12 +561,15 @@ body {
 
 /* CONTAINER DOS CARDS DE AVALIAÇÃO */
 .container-ava {
-    position: relative; 
-    z-index: 2; /* Para ficar acima da imagem de fundo */
+    position: relative;
+    z-index: 2;
+    /* Para ficar acima da imagem de fundo */
     display: flex;
     justify-content: center;
-    flex-wrap: wrap; /* Para quebrar em telas menores */
-    gap: 30px; /* Espaço entre os cards */
+    flex-wrap: wrap;
+    /* Para quebrar em telas menores */
+    gap: 30px;
+    /* Espaço entre os cards */
     max-width: 1100px;
     width: 90%;
     margin-top: 20px;
@@ -632,23 +577,26 @@ body {
 
 /* CARDS INDIVIDUAIS DE AVALIAÇÃO (O SEGREDO DA TRANSPARÊNCIA) */
 .card-avaliacao {
-    flex: 1; 
-    min-width: 280px; 
-    max-width: 350px; 
-    
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+
     /* Fundo semi-transparente (RGBA) e efeito glassmorphism */
-    background-color: rgba(30, 30, 30, 0.75); /* Fundo escuro e 75% opaco */
-    backdrop-filter: blur(8px); /* Efeito de "vidro embaçado" */
-    
+    background-color: rgba(30, 30, 30, 0.75);
+    /* Fundo escuro e 75% opaco */
+    backdrop-filter: blur(8px);
+    /* Efeito de "vidro embaçado" */
+
     border-radius: 15px;
     padding: 25px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.15); /* Borda mais visível */
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    /* Borda mais visível */
     margin-top: 30px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; 
-    
+    justify-content: space-between;
+
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -671,7 +619,8 @@ body {
     border-radius: 50%;
     object-fit: cover;
     margin-right: 15px;
-    border: 3px solid var(--dark-red, #a51512); /* Usando a cor de destaque do tema */
+    border: 3px solid var(--dark-red, #a51512);
+    /* Usando a cor de destaque do tema */
 }
 
 .nome-estrelas {
@@ -687,7 +636,8 @@ body {
 }
 
 .estrelas {
-    color: #FFC400; /* Cor dourada forte para as estrelas */
+    color: #FFC400;
+    /* Cor dourada forte para as estrelas */
     font-size: 1em;
     letter-spacing: 1px;
 }
@@ -699,7 +649,8 @@ body {
     margin: 0;
     font-style: italic;
 }
-.button-ava{
+
+.button-ava {
     margin-top: 50px;
     padding: 12px 28px;
     font-size: 1.1em;
@@ -712,182 +663,12 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
+
 .button-ava:hover {
     background-color: #d4881f;
     transform: translateY(-3px);
 }
-/* ---------------------------------------------------------------------- */
-/* RODAPÉ PREMIUM (Estilo Aprimorado) */
-/* ---------------------------------------------------------------------- */
 
-.footer-premium {
-    /* Fundo principal com a cor dark-red para um contraste forte */
-    background-color: var(--dark-red, #a51512); 
-    color: var(--light-beige, #eccca5);
-    padding: 0;
-    font-family: 'Inter', Arial, sans-serif;
-    /* Remove qualquer margem padrão que possa causar rolagem horizontal */
-    width: 100%; 
-    box-sizing: border-box;
-}
-
-/* Seção Superior (Brand e Newsletter) */
-.footer-top-section {
-    /* Fundo um pouco mais claro para a seção superior, dando profundidade */
-    background-color: var(--card-dark, #1f1f1f); 
-    padding: 60px 20px;
-    max-width: 100x;
-    margin: 0 auto;
-    
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-    flex-wrap: wrap;
-    /* Linha de destaque entre a seção e o corpo do site */
-    border-top: 5px solid var(--orange-yellow, #e69823); 
-}
-
-/* Seção do Meio (Links e Contato) */
-.footer-mid-section {
-    background-color: var(--dark-red, #a51512); 
-    padding: 50px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-    flex-wrap: wrap;
-    /* Separador sutil entre a seção superior e a do meio */
-    border-top: 1px solid rgba(255, 255, 255, 0.1); 
-}
-
-/* Colunas do Rodapé */
-.footer-column {
-    flex: 1; 
-    min-width: 250px;
-}
-
-/* Título da Marca/Logo */
-.footer-logo {
-    font-size: 2.2em;
-    font-weight: 900;
-    color: var(--orange-yellow, #e69823);
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    display: block;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
-}
-
-.tagline {
-    font-size: 1em;
-    font-style: italic;
-    color: rgba(255, 255, 255, 0.8);
-    margin-top: 10px;
-}
-
-/* Títulos de Coluna */
-.footer-title {
-    font-size: 1.3em;
-    font-weight: 800;
-    color: #FFFFFF; /* Título em branco puro */
-    margin-bottom: 20px;
-    position: relative;
-    padding-bottom: 8px;
-}
-
-.footer-title::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 40px; /* Linha de destaque */
-    height: 3px;
-    background-color: var(--orange-yellow, #e69823);
-    border-radius: 2px;
-}
-
-/* Links de Navegação */
-.footer-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.footer-links li {
-    margin-bottom: 12px;
-}
-
-.footer-links a,
-.contact-item {
-    color: var(--light-beige, #eccca5);
-    text-decoration: none;
-    font-size: 0.9em;
-    transition: color 0.3s ease, padding-left 0.3s ease;
-    display: block;
-}
-
-.footer-links a:hover,
-.contact-link:hover {
-    color: var(--orange-yellow, #e69823);
-    text-decoration: underline;
-    padding-left: 5px; /* Pequeno movimento no hover */
-}
-
-.contact-item {
-    margin-bottom: 10px;
-    line-height: 1.5;
-}
-
-/* Área de Newsletter */
-.newsletter-area p {
-    margin-bottom: 15px;
-    font-size: 0.95em;
-    color: rgba(255, 255, 255, 0.9);
-}
-
-.newsletter-form {
-    display: flex;
-    flex-wrap: wrap; /* Garante que quebre em telas menores */
-    gap: 10px;
-}
-
-.newsletter-form input[type="email"] {
-    flex-grow: 1;
-    padding: 12px 15px;
-    border: none;
-    border-radius: 8px;
-    background-color: var(--dark-bg, #2e2e2e);
-    color: #FFFFFF;
-    font-size: 1em;
-    outline: none;
-    min-width: 200px;
-    transition: box-shadow 0.3s;
-}
-
-.newsletter-form input[type="email"]:focus {
-    box-shadow: 0 0 0 2px var(--orange-yellow, #e69823);
-}
-
-.btn-subscribe {
-    background-color: var(--orange-yellow, #e69823);
-    color: var(--card-dark, #1f1f1f);
-    font-weight: 700;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    text-transform: uppercase;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.btn-subscribe:hover {
-    background-color: #f7a935; /* Um pouco mais claro no hover */
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-/* CONTAINER DO RETÂNGULO */
 .social-float {
     position: fixed;
     bottom: 40px;
@@ -896,7 +677,6 @@ body {
     gap: 15px;
     padding: 15px 20px;
 
-    /* Retângulo transparente com blur */
     background: rgba(255, 255, 255, 0.12);
     backdrop-filter: blur(12px);
 
@@ -910,14 +690,12 @@ body {
     transition: all .4s ease;
 }
 
-/* APARECER QUANDO O JS ATIVAR */
 .social-float.show {
     opacity: 1;
     transform: translateY(0);
     pointer-events: all;
 }
 
-/* CADA ÍCONE */
 .social-item {
     width: 55px;
     height: 55px;
@@ -926,31 +704,250 @@ body {
     justify-content: center;
 
     border-radius: 15px;
-    background: rgba(0, 0, 0, 0.35);
 
     cursor: pointer;
     transition: transform .3s ease, box-shadow .3s ease;
 }
 
 .social-item img {
-    width: 60%;
+    width: 110%;
 }
 
-/* ANIMAÇÃO NO HOVER */
 .social-item:hover {
     transform: translateY(-8px) scale(1.1);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
-/* CORES INDIVIDUAIS (opcional) */
-.social-item.whats {
-    background: linear-gradient(135deg, #25D366, #128C24);
+.footer-premium {
+    background-color: var(--dark-red, #a51512);
+    color: var(--light-beige, #eccca5);
+    font-family: "Inter", sans-serif;
+    width: 100%;
+    margin-top: 80px;
 }
 
-.social-item.insta {
-    background: linear-gradient(135deg, #F58529, #DD2A7B, #8134AF);
+.footer-top-section {
+    background-color: var(--card-dark, #1f1f1f);
+    padding: 60px 40px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+
+    border-top: 5px solid var(--orange-yellow, #e69823);
 }
 
-.social-item.face {
-    background: linear-gradient(135deg, #1877F2, #0F56D9);
+.footer-column {
+    flex: 1;
+    min-width: 260px;
+}
+
+.footer-logo {
+    font-size: 2.5em;
+    font-weight: 900;
+    color: var(--orange-yellow, #e69823);
+    text-decoration: none;
+    letter-spacing: 3px;
+    display: block;
+    margin-bottom: 10px;
+    text-shadow: 0 0 8px rgba(255, 165, 40, 0.45);
+}
+
+.tagline {
+    color: rgba(255, 255, 255, 0.8);
+    font-style: italic;
+    max-width: 300px;
+    margin-top: 5px;
+}
+
+.newsletter-area {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-title {
+    font-size: 1.4em;
+    color: #fff;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 8px;
+    font-weight: 800;
+}
+
+.footer-title::after {
+    content: "";
+    width: 45px;
+    height: 3px;
+    background: var(--orange-yellow, #e69823);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: 3px;
+}
+
+.newsletter-area p {
+    font-size: 0.95em;
+    margin-bottom: 20px;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 14px;
+    background: #2e2e2e;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1em;
+    outline: none;
+    transition: 0.3s;
+}
+
+.newsletter-form input:focus {
+    box-shadow: 0 0 0 2px var(--orange-yellow, #e69823);
+}
+
+.btn-subscribe {
+    padding: 14px 22px;
+    background: var(--orange-yellow, #e69823);
+    color: #1a1a1a;
+    font-weight: 800;
+    border-radius: 8px;
+    border: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-subscribe:hover {
+    background: #fcb54a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.footer-mid-section {
+    background: var(--dark-red, #a51512);
+    padding: 60px 40px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin: 12px 0;
+}
+
+.footer-links a {
+    color: var(--light-beige, #eccca5);
+    text-decoration: none;
+    font-size: 1em;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    padding-left: 6px;
+    color: var(--orange-yellow, #e69823);
+    text-shadow: 0 0 6px rgba(255, 200, 100, 0.5);
+}
+
+.contact-item {
+    margin-bottom: 10px;
+}
+
+.contact-link {
+    color: var(--orange-yellow, #e69823);
+    text-decoration: none;
+}
+
+.contact-link:hover {
+    text-decoration: underline;
+}
+/* ================================
+        RESPONSIVIDADE
+================================ */
+
+/* ----- TELAS MUITO GRANDES (monitores 1600px+) ----- */
+@media (min-width: 1600px) {
+    .container {
+        max-width: 1500px;
+        margin: 0 auto;
+    }
+
+    .card {
+        transform: scale(1.05);
+    }
+}
+
+/* ----- TELAS GRANDES (desktops normais) ----- */
+@media (max-width: 1400px) {
+    .container {
+        padding: 0 40px;
+    }
+}
+
+/* ----- LAPTOPS E TABLETS HORIZONTAIS ----- */
+@media (max-width: 1200px) {
+    .cards {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+}
+
+/* ----- TABLETS ----- */
+@media (max-width: 900px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+}
+
+/* ----- CELULARES GRANDES ----- */
+@media (max-width: 600px) {
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 1.7rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+/* ----- CELULARES PEQUENOS ----- */
+@media (max-width: 400px) {
+    .card {
+        font-size: 0.9rem;
+    }
+
+    header h1 {
+        font-size: 1.4rem;
+    }
+
+    button {
+        padding: 10px 12px;
+        font-size: 0.9rem;
+    }
 }

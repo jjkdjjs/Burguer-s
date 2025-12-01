@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Burguer's</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -14,38 +14,20 @@
             <img src="imgs/logo-1.png" alt="logo">
         </div>
         <ul class="nav">
-            <li><a href="#">Início</a></li>
+            <li><a href="index.html">Início</a></li>
             <li><a href="#">Menu</a></li>
             <li><a href="#">Categoria</a></li>
-            <li><a href="#">Contato</a></li>
+            <li><a href="contato.html">Contato</a></li>
         </ul>
     </nav>
     <div class="banner">
         <img src="imgs/banner-1.png" alt="banner">
     </div>
-    <a href="#link-para-pagina-de-pedido" style="text-decoration: none;">
-        <button class="button">
-            Peça agora
-            <svg fill="none" viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_30_96)">
-                    <path fill="red"
-                        d="M0.479167 11.5C0.203024 11.5 -0.0208333 11.7239 -0.0208333 12C-0.0208333 12.2761 0.203024 12.5 0.479167 12.5V11.5ZM22.9231 12.3536C23.1184 12.1583 23.1184 11.8417 22.9231 11.6464L19.7411 8.46447C19.5459 8.2692 19.2293 8.2692 19.034 8.46447C18.8388 8.65973 18.8388 8.97631 19.034 9.17157L21.8625 12L19.034 14.8284C18.8388 15.0237 18.8388 15.3403 19.034 15.5355C19.2293 15.7308 19.5459 15.7308 19.7411 15.5355L22.9231 12.3536ZM0.479167 12.5H22.5696V11.5H0.479167V12.5Z">
-                    </path>
-                </g>
-                <defs>
-                    <clipPath id="clip0_30_96">
-                        <rect fill="orange" height="24" width="24"></rect>
-                    </clipPath>
-                </defs>
-            </svg>
-        </button>
-    </a>
+
     <h1 class="menu">MENU</h1>
     <div class="carousel-container">
         <div class="carousel-track" id="track">
 
-
-            <!-- CARD 1 -->
             <div class="card active">
                 <img
                     src="https://static.wixstatic.com/media/891b87_99438f1b625447598162e0101329bfb9~mv2.png/v1/fill/w_980,h_980,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/viso-burger-main.png">
@@ -72,7 +54,6 @@
 
             </div>
 
-            <!-- CARD 2 -->
             <div class="card">
                 <img
                     src="https://purepng.com/public/uploads/large/purepng.com-cheeseburgerburger-food-cheese-fast-cheeseburger-hamburger-9415246000238fulo.png">
@@ -96,7 +77,6 @@
                 </a>
             </div>
 
-            <!-- CARD 3 -->
             <div class="card">
                 <img src="imgs/hamburguer-2.png">
                 <h3>Bacon Cheeseburger</h3>
@@ -119,7 +99,6 @@
                 </a>
             </div>
 
-            <!-- CARD 4 -->
             <div class="card">
                 <img src="imgs/hamburguer-3.png">
                 <h3>Rib Burger (Costela)</h3>
@@ -142,7 +121,6 @@
                 </a>
             </div>
 
-            <!-- CARD 5 -->
             <div class="card">
                 <img src="https://www.fatburgercanada.com/wp-content/uploads/2015/07/8-Ultimate-BBQ-Burger.png">
                 <h3>Barbecue Burger</h3>
@@ -164,6 +142,95 @@
                     </div>
                 </a>
             </div>
+            <div class="card">
+                <img src="https://wrapsnbeyond.com/wp-content/uploads/2025/02/classic-burger.webp">
+                <h3>Classic Burger</h3>
+                <p class="desc">Hambúrguer artesanal, queijo prato, tomate, alface e maionese da casa.</p>
+                <p class="price">R$ 18,90</p>
+                <a href="#link-da-pagina-de-pedidos" style="text-decoration: none;">
+                    <div class="button-buy">
+                        <div class="button-wrapper">
+                            <div class="text">Peça</div>
+                            <span class="icon">
+                                <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z">
+                                    </path>
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="card">
+                <img
+                    src="https://api-middleware-mcd.mcdonaldscupones.com/media/image/product$kMX5kx4H/200/200/original?country=br">
+                <h3>Double Bacon</h3>
+                <p class="desc">Dois smash burgers, cheddar duplo, bacon crocante e molho especial.</p>
+                <p class="price">R$ 27,90</p>
+                <a href="#link-da-pagina-de-pedidos" style="text-decoration: none;">
+                    <div class="button-buy">
+                        <div class="button-wrapper">
+                            <div class="text">Peça</div>
+                            <span class="icon">
+                                <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z">
+                                    </path>
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="card">
+                <img
+                    src="https://d3sn2rlrwxy0ce.cloudfront.net/_800x600_crop_center-center_none/BK-Chicken-Crispy-thumb.png?mtime=20230125045509&focal=none&tmtime=20241024134411">
+                <h3>Chicken Crispy</h3>
+                <p class="desc">Frango empanado super crocante, alface americana e molho leve.</p>
+                <p class="price">R$ 19,90</p>
+                <a href="#link-da-pagina-de-pedidos" style="text-decoration: none;">
+                    <div class="button-buy">
+                        <div class="button-wrapper">
+                            <div class="text">Peça</div>
+                            <span class="icon">
+                                <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z">
+                                    </path>
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="card">
+                <img
+                    src="https://api-middleware-mcd.mcdonaldscupones.com/media/image/product$kPXfBnhs/200/200/original?country=br">
+                <h3>Egg Burguer</h3>
+                <p class="desc">Hambúrguer artesanal, ovo caipira, e queijo prato.</p>
+                <p class="price">R$ 22,50</p>
+                <a href="#link-da-pagina-de-pedidos" style="text-decoration: none;">
+                    <div class="button-buy">
+                        <div class="button-wrapper">
+                            <div class="text">Peça</div>
+                            <span class="icon">
+                                <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z">
+                                    </path>
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+
 
         </div>
     </div>
@@ -194,14 +261,12 @@
     <div class="caixa">
         <div class="container-card-box">
 
-            <!-- CARD 1: Artesanal (seu código ajustado) -->
             <div class="card_box">
                 <h3 class="card-titulo">Paixão e Sabor</h3>
                 <p class="texto">Cada hambúrguer é montado à mão com paixão e atenção aos detalhes, garantindo uma
                     experiência única.</p>
             </div>
 
-            <!-- CARD 2: Exemplo de Qualidade -->
             <div class="card_box">
                 <h3 class="card-titulo">Qualidade Premium</h3>
                 <p class="texto">Usamos apenas carne 100% Angus, ingredientes frescos e pães de fermentação natural.</p>
@@ -212,115 +277,124 @@
             </div>
             <div class="card_box">
                 <h3 class="card-titulo">Delivery Flash</h3>
-                <p class="texto">Chegamos onde você estiver! Pedidos entregues com agilidade e rastreio em tempo real.</p>
+                <p class="texto">Chegamos onde você estiver! Pedidos entregues com agilidade e rastreio em tempo real.
+                </p>
             </div>
         </div>
-    <section class="section-avaliacoes">
-    
-    <!-- Imagem de Fundo (o hambúrguer em chamas) --><div class="imagem-fundo-avaliacoes">
-        <img class="imagem-ava" src="imgs/banner-ava.png" alt="Cenário para Avaliações">
-    </div>
+        <section class="section-avaliacoes">
 
-    <!-- Título da Seção (similar ao "What They Say?") --><h2 class="titulo-secao-ava">O Que Nossos Clientes Dizem</h2>
+            <div class="imagem-fundo-avaliacoes">
+                <img class="imagem-ava" src="imgs/banner-ava.png" alt="Cenário para Avaliações">
+            </div>
 
-    <!-- CONTAINER DOS CARDS DE AVALIAÇÃO --><div class="container-ava">
-        
-        <!-- CARD DE AVALIAÇÃO 1 --><div class="card-avaliacao">
-            <div class="perfil-info">
-                <img class="avatar-cliente" src="https://i.pinimg.com/736x/fd/fc/ef/fdfcefc24e58a4e3ed4dd6099d530353.jpg" alt="Avatar John Smith">
-                <div class="nome-estrelas">
-                    <span class="nome-cliente">João Cristofolini</span>
-                    <div class="estrelas">★★★★★</div>
+            <h2 class="titulo-secao-ava">O Que Nossos Clientes Dizem</h2>
+
+            <div class="container-ava">
+
+                <div class="card-avaliacao">
+                    <div class="perfil-info">
+                        <img class="avatar-cliente"
+                            src="https://i.pinimg.com/736x/fd/fc/ef/fdfcefc24e58a4e3ed4dd6099d530353.jpg"
+                            alt="Avatar John Smith">
+                        <div class="nome-estrelas">
+                            <span class="nome-cliente">João Cristofolini</span>
+                            <div class="estrelas">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="depoimento">"O hambúrguer estava delicioso! Fresco, suculento e a entrega foi super
+                        rápida. Recomendo muito!"</p>
+                </div>
+
+                <div class="card-avaliacao">
+                    <div class="perfil-info">
+                        <img class="avatar-cliente"
+                            src="https://img.freepik.com/fotos-gratis/retrato-de-uma-linda-mulher-morena-rosto-sorridente_53876-137695.jpg?semt=ais_hybrid&w=740&q=80"
+                            alt="Avatar Ana Silva">
+                        <div class="nome-estrelas">
+                            <span class="nome-cliente">Ana Tambosi</span>
+                            <div class="estrelas">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="depoimento">"Sempre peço aqui! A qualidade é impecável e o atendimento é excelente. Um dos
+                        melhores burgers da cidade."</p>
+                </div>
+
+                <div class="card-avaliacao">
+                    <div class="perfil-info">
+                        <img class="avatar-cliente"
+                            src="https://files.tecnoblog.net/wp-content/uploads/2019/02/thispersondoesnotexist.jpg"
+                            alt="Avatar Pedro Souza">
+                        <div class="nome-estrelas">
+                            <span class="nome-cliente">Pedro Gadotti</span>
+                            <div class="estrelas">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="depoimento">"Ambiente aconchegante e comida fantástica. As batatas fritas são crocantes e
+                        o milk-shake é imperdível!"</p>
+                </div>
+                <div class="ava">
+                    <a href="#"><button class="button-ava">Deixe sua Avaliação</button></a>
                 </div>
             </div>
-            <p class="depoimento">"O hambúrguer estava delicioso! Fresco, suculento e a entrega foi super rápida. Recomendo muito!"</p>
-        </div>
+        </section>
+        <footer class="footer-premium">
+            <div class="footer-top-section">
 
-        <!-- CARD DE AVALIAÇÃO 2 --><div class="card-avaliacao">
-            <div class="perfil-info">
-                <img class="avatar-cliente" src="https://img.freepik.com/fotos-gratis/retrato-de-uma-linda-mulher-morena-rosto-sorridente_53876-137695.jpg?semt=ais_hybrid&w=740&q=80" alt="Avatar Ana Silva">
-                <div class="nome-estrelas">
-                    <span class="nome-cliente">Ana Tambosi</span>
-                    <div class="estrelas">★★★★★</div>
+                <div class="footer-column brand-info">
+                    <a href="#" class="footer-logo">BURGER'S</a>
+                    <p class="tagline">A Experiência Burger Inesquecível.<br>Feito à mão, feito com paixão.</p>
                 </div>
-            </div>
-            <p class="depoimento">"Sempre peço aqui! A qualidade é impecável e o atendimento é excelente. Um dos melhores burgers da cidade."</p>
-        </div>
+                
+                <div class="footer-column newsletter-area">
+                    <h4 class="footer-title">Newsletter Exclusiva</h4>
+                    <p>Receba as nossas novidades, promoções secretas e lançamentos em primeira mão.</p>
 
-        <!-- CARD DE AVALIAÇÃO 3 --><div class="card-avaliacao">
-            <div class="perfil-info">
-                <img class="avatar-cliente" src="https://files.tecnoblog.net/wp-content/uploads/2019/02/thispersondoesnotexist.jpg" alt="Avatar Pedro Souza">
-                <div class="nome-estrelas">
-                    <span class="nome-cliente">Pedro Gadotti</span>
-                    <div class="estrelas">★★★★★</div>
+                    <form action="https://getform.io/f/bgdvyyxa" method="POST" id="newsletterForm" class="newsletter-form">
+                        <input id="emailInput" name="_replyto" type="email" placeholder="Seu melhor e-mail aqui..." required>
+
+                        <button type="submit" class="btn-subscribe">ASSINAR</button>
+
+                        <p id="newsletterMessage" class="newsletter-msg"></p>
+                    </form>
                 </div>
+
+
             </div>
-            <p class="depoimento">"Ambiente aconchegante e comida fantástica. As batatas fritas são crocantes e o milk-shake é imperdível!"</p>
-        </div>
-        <div class="ava">
-            <a href="#"><button class="button-ava">Deixe sua Avaliação</button></a>
-        </div>
-    </div>
-</section>
-<footer class="footer-premium">
-    <div class="footer-top-section">
-        
-        <!-- Coluna 1: Logo e Marca (Ocupa mais espaço em telas maiores) -->
-        <div class="footer-column brand-info">
-            <a href="#" class="footer-logo">BURGER'S</a>
-            <p class="tagline">A Experiência Burger Inesquecível.<br>Feito à mão, feito com paixão.</p>
-        </div>
 
-        <!-- Coluna 2: Newsletter / Call to Action -->
-        <div class="footer-column newsletter-area">
-            <h4 class="footer-title">Newsletter Exclusiva</h4>
-            <p>Receba as nossas novidades, promoções secretas e lançamentos em primeira mão.</p>
-            <form class="newsletter-form">
-                <input type="email" placeholder="Seu melhor e-mail aqui..." required>
-                <button type="submit" class="btn-subscribe">ASSINAR</button>
-            </form>
-        </div>
-        
-    </div>
-    
-    <div class="footer-mid-section">
-        
-        <!-- Coluna 3: Links Rápidos -->
-        <div class="footer-column nav-links">
-            <h4 class="footer-title">Mapa do Site</h4>
-            <ul class="footer-links">
-                 <li><a href="#avaliacoes">Avaliações</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </div>
+            <div class="footer-mid-section">
 
-        <!-- Coluna 4: Informações e Contato -->
-        <div class="footer-column contact-info">
-            <h4 class="footer-title">Fale Conosco</h4>
-            <p class="contact-item">Rua Premium Burger, 456<br>Bairro Saboroso, SP</p>
-            <p class="contact-item">Telefone: <a href="tel:+5511987654321" class="contact-link">(11) 98765-4321</a></p>
-            <p class="contact-item">Email: <a href="mailto:contato@burgerpremium.com" class="contact-link">contato@burgerpremium.com</a></p>
-        </div>
-        
-    </div>
-    
-<!-- ÍCONES FLOTANTES EM UM RETÂNGULO TRANSPARENTE -->
-<div class="social-float" id="socialBox">
-    <a href="#" class="social-item whats">
-        <img src="whats.svg" alt="WhatsApp">
-    </a>
-    <a href="#" class="social-item insta">
-        <img src="https://img.icons8.com/?size=100&id=kfnjM4KPaLxk&format=png&color=000000" alt="Instagram">
-    </a>
-    <a href="#" class="social-item face">
-        <img src="https://img.icons8.com/?size=100&id=undefined&format=png&color=000000" alt="Facebook">
-    </a>
-</div>
+                <div class="footer-column nav-links">
+                    <h4 class="footer-title">Mapa do Site</h4>
+                    <ul class="footer-links">
+                        <li><a href="#avaliacoes">Avaliações</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
 
+                <div class="footer-column contact-info">
+                    <h4 class="footer-title">Fale Conosco</h4>
+                    <p class="contact-item">Rua Premium Burger, 456<br>Rodeio  - Centro, SC</p>
+                    <p class="contact-item">Telefone: <a href="tel:+5511987654321" class="contact-link">(11)
+                            98765-4321</a></p>
+                    <p class="contact-item">Email: <a href="mailto:contato@burgerpremium.com"
+                            class="contact-link">contato@burgerpremium.com</a></p>
+                </div>
 
-    
-</footer>
-    <script src="js/script.js"></script>
+            </div>
+            <div class="social-float" id="socialBox">
+                <a href="https://wa.me/554799615016" class="social-item whats">
+                    <img src="https://img.icons8.com/?size=100&id=DUEq8l5qTqBE&format=png&color=000000" alt="WhatsApp">
+                </a>
+                <a href="https://www.instagram.com/" class="social-item insta">
+                    <img src="https://img.icons8.com/?size=100&id=nj0Uj45LGUYh&format=png&color=000000" alt="Instagram">
+                </a>
+                <a href="https://www.facebook.com/" class="social-item face">
+                    <img src="https://img.icons8.com/?size=100&id=jZ0kw76QEzJU&format=png&color=000000" alt="Facebook">
+                </a>
+            </div>
+        </footer>
+        <script src="js/script.js"></script>
 </body>
+
 </html>

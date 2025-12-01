@@ -1,0 +1,333 @@
+:root {
+    /* Mantendo as variáveis de cor originais */
+    --burned-yellow: #a51512;   /* Vermelho Escuro/Destaque */
+    --dark-red: #000000;        /* Preto (para texto principal) */
+    --orange-yellow: #e69823;   /* Amarelo Principal (Fundo/Ação) */
+    --light-beige: #ffffff;     /* Branco (Fundo do Card) */
+    --white: #ffffff;           /* Branco Puro */
+    --yellow-text: #b97d26;     /* Amarelo Queimado (Labels/Bordas/Fundo Social) */
+}
+
+/* <body> e Configurações Globais: Garante que o fundo cubra toda a tela */
+body {
+    background: var(--orange-yellow);
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    min-height: 100vh; /* Garante altura total da viewport */
+    display: flex;
+    flex-direction: column;
+}
+
+/* SEÇÃO DE CONTATO: Alinhamento e Espaçamento */
+.contact-section {
+    text-align: center;
+    padding: 60px 20px; /* Mais espaço no topo/base */
+    flex-grow: 1; /* Permite que a seção ocupe o espaço restante */
+}
+
+/* TÍTULOS e PARÁGRAFOS */
+.contact-section h1 {
+    color: var(--white); /* Título em branco para destaque no fundo amarelo */
+    font-size: 2.2rem;
+    margin-bottom: 5px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.contact-section p {
+    color: var(--dark-red);
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+}
+
+/* CARD: Milimetricamente Centralizado e com Sombra Refinada */
+.contact-card {
+    max-width: 500px;
+    margin: 0 auto; /* Centraliza horizontalmente */
+    text-align: left;
+    background: var(--light-beige);
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Sombra mais suave e profunda */
+    transition: transform 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-2px); /* Efeito sutil ao passar o mouse */
+}
+
+/* LABELS: Alinhamento Fino */
+label {
+    display: block;
+    margin-top: 20px; /* Espaçamento ajustado */
+    font-weight: 700; /* Use 700 para negrito forte */
+    color: var(--yellow-text);
+    font-size: 0.95rem;
+}
+
+/* INPUTS e TEXTAREA: Visual Limpo e Alinhado */
+input,
+textarea {
+    width: 100%;
+    padding: 14px; /* Padding ligeiramente maior */
+    margin-top: 6px;
+    border: 1px solid #ddd; /* Borda mais suave por padrão */
+    border-radius: 10px;
+    font-size: 1rem;
+    background: var(--white);
+    color: #333;
+    box-sizing: border-box; /* Garante que padding não estoure a largura */
+    transition: all 0.3s;
+}
+
+input:focus,
+textarea:focus {
+    border-color: var(--orange-yellow);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(230, 152, 35, 0.2); /* Foco mais sutil */
+}
+
+/* BOTÃO: Efeito e Estilo de Ação */
+button {
+    margin-top: 30px;
+    width: 100%;
+    padding: 16px; /* Padding maior */
+    border: none;
+    background: var(--orange-yellow);
+    color: var(--white);
+    font-size: 1.1rem;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all .3s ease;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(230, 152, 35, 0.4); /* Sombra para dar profundidade */
+}
+
+button:hover {
+    background: var(--burned-yellow);
+    box-shadow: 0 6px 20px rgba(185, 125, 38, 0.5);
+    transform: translateY(-1px); /* Efeito de 'click' sutil */
+}
+.clean{
+    background: var(--burned-yellow);
+    color: var(--light-beige);
+    margin-top: 10px;
+}
+.clean:hover {
+    background: var(--orange-yellow);
+    color: var(--white);
+}
+
+/* INFORMAÇÕES EXTRAS: Separação e Leitura */
+.extra-info {
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px solid #eee; /* Separador sutil */
+    font-size: 0.95rem;
+    color: var(--dark-red);
+    line-height: 25px;
+}
+
+.extra-info strong {
+    color: var(--burned-yellow); /* Destaque na cor mais escura */
+}
+
+/* REDES SOCIAIS FLUTUANTES: Posição Fixa e Design Elegante */
+.social-float {
+    position: fixed;
+    bottom: 30px; /* Posição ajustada */
+    right: 30px;
+    z-index: 1000;
+    display: flex;
+    gap: 10px; /* Espaçamento menor e mais elegante */
+    padding: 10px 15px;
+
+    /* Estilo semi-transparente no tom amarelo (Glassmorphism sutil) */
+    background: rgba(185, 125, 38, 0.85); /* Usando var(--yellow-text) com transparência */
+    backdrop-filter: blur(5px); /* Efeito de desfoque */
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50px; /* Formato de 'pílula' */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+    transition: all .4s cubic-bezier(0.2, 0.8, 0.2, 1); /* Transição de 'saltar' mais natural */
+}
+
+.social-float.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+}
+
+.social-item {
+    width: 48px; /* Tamanho do item ajustado */
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.social-item img {
+    width: 75%; /* Tamanho da imagem do ícone */
+    height: 75%;
+    object-fit: contain;
+}
+
+.social-item:hover {
+    transform: scale(1.1);
+}
+/* Botão Principal */
+.go-back-btn {
+    /* Mapeamento das classes do Tailwind: w-48, h-14, bg-white, rounded-2xl, text-center, relative, text-black, text-xl, font-semibold, group */
+    background-color: white;
+    text-align: center;
+    width: 20rem; /* w-48 (12 * 4 = 48 -> 12rem) */
+    height: 3.5rem; /* h-14 (14 * 4 = 56px -> 3.5rem) */
+    border-radius: 1rem; /* rounded-2xl (~16px) */
+    position: relative;
+    color: black;
+    font-size: 1.25rem; /* text-xl */
+    font-weight: 600; /* font-semibold */
+    border: none;
+    overflow: hidden;
+    top: -880px;
+    left: 1%; 
+}
+.go-back-btn:hover {
+    cursor: pointer;
+    background: var(--light-beige);
+}
+
+/* Div do Efeito (Seta) */
+.go-back-effect {
+    /* Mapeamento das classes do Tailwind: bg-green-400, rounded-xl, h-12, w-1/4, flex, items-center, justify-center, absolute, left-1, top-[4px], z-10, duration-500 */
+    background-color: var(--burned-yellow); /* bg-green-400 */
+    border-radius: 0.75rem; /* rounded-xl (~12px) */
+    height: 3rem; /* h-12 (48px) */
+    width: 22%; /* w-1/4 */
+    display: flex;
+    align-items: center; /* items-center */
+    justify-content: center; /* justify-center */
+    position: absolute;
+    left: 4px; /* left-1 (0.25rem = 4px) */
+    top: 4px; /* top-[4px] */
+    z-index: 10;
+    transition: width 0.5s ease-in-out; /* duration-500 */
+}
+
+/* Efeito de Hover: Expande a Div (Arrow) */
+.go-back-btn:hover .go-back-effect {
+    /* Mapeamento da classe Tailwind: group-hover:w-[184px] */
+    width: 19.5rem; /* w-[184px]. O botão tem 12rem (192px), 184px deixa uma pequena borda. */
+}
+
+/* Parágrafo do Texto "Go Back" */
+.go-back-text {
+    top:-18px;
+    margin-left: 30px;
+    transform: translateX(0.5rem); /* translate-x-2 (8px) */
+    position: relative; /* Garante que o texto fique acima do efeito de transição, mas abaixo do z-index do efeito */
+    z-index: 5;
+}
+
+/* Estilo do Ícone SVG */
+.go-back-effect svg path {
+    /* O SVG usa fill="#000000" para preto */
+    fill: var(--light-beige);
+}
+.footer-mid-section {
+    background: var(--burned-yellow);
+    padding: 40px 50px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top:-50px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+.footer-column {
+    flex: 1;
+    min-width: 260px;
+}
+.footer-title {
+    font-size: 1.4em;
+    color: #fff;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 8px;
+    font-weight: 800;
+}
+
+.footer-title::after {
+    content: "";
+    width: 45px;
+    height: 3px;
+    background: var(--orange-yellow, #e69823);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: 3px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin: 12px 0;
+}
+
+.footer-links a {
+    color: var(--light-beige, #eccca5);
+    text-decoration: none;
+    font-size: 1em;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    padding-left: 6px;
+    color: var(--orange-yellow, #e69823);
+    text-shadow: 0 0 6px rgba(255, 200, 100, 0.5);
+}
+
+.contact-item {
+    margin-bottom: 10px;
+    color:var(--light-beige);
+}
+
+.contact-link {
+    color: var(--orange-yellow);
+    text-decoration: none;
+}
+
+.contact-link:hover {
+    text-decoration: underline;
+}
+/* Media Query (Responsividade): Garante que fique bom em celular */
+@media (max-width: 600px) {
+    .contact-section {
+        padding: 30px 15px;
+    }
+
+    .contact-card {
+        padding: 25px;
+    }
+    
+    .social-float {
+        bottom: 15px;
+        right: 15px;
+        gap: 8px;
+        padding: 8px 12px;
+    }
+
+    .social-item {
+        width: 40px;
+        height: 40px;
+    }
+}

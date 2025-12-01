@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     
+  <meta charset="UTF-8">
+     
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         
+  <link rel="stylesheet" href="css/contato.css">
+      <title>Contato</title>
+</head>
+
+<body>
+      <section class="contact-section">
+      <h1>Entre em Contato</h1>
+    <p>Fale com a gente!</p>
+
+    <div class="contact-card">
+      <form action="https://formspree.io/f/xzzngdno" method="POST">
+
+        <label for="nome">Nome</label>
+        <input id="nome" type="text" name="nome" required>
+
+        <label for="email">Email</label>
+        <input id="email" type="email" name="email" required>
+
+        <label for="mensagem">Mensagem</label>
+        <textarea id="mensagem" rows="5" name="mensagem" required></textarea>
+
+        <button type="submit">Enviar</button>
+        <button type="reset" class="clean">Limpar</button>
+      </form>
+
+  </section>
+  <div class="social-float" id="socialBox">
+    <a href="https://wa.me/554799615016" class="social-item whats">
+      <img src="https://img.icons8.com/?size=100&id=DUEq8l5qTqBE&format=png&color=000000" alt="WhatsApp">
+    </a>
+    <a href="https://www.instagram.com/" class="social-item insta">
+      <img src="https://img.icons8.com/?size=100&id=nj0Uj45LGUYh&format=png&color=000000" alt="Instagram">
+    </a>
+    <a href="https://www.facebook.com/" class="social-item face">
+      <img src="https://img.icons8.com/?size=100&id=jZ0kw76QEzJU&format=png&color=000000" alt="Facebook">
+    </a>
+  </div>
+  <a href="index.html"><button class="go-back-btn" type="button">
+      <div class="go-back-effect">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" height="25px" width="25px">
+          <path d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z" fill="#000000"></path>
+          <path
+            d="m237.248 512 265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z"
+            fill="#000000"></path>
+        </svg>
+      </div>
+      <p class="go-back-text">Volte para o início</p>
+    </button></a>
+  <div class="footer-mid-section">
+
+    <div class="footer-column nav-links">
+      <h4 class="footer-title">Mapa do Site</h4>
+      <ul class="footer-links">
+        <li><a href="#avaliacoes">Avaliações</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column contact-info">
+      <h4 class="footer-title">Fale Conosco</h4>
+      <p class="contact-item">Rua Premium Burger, 456<br>Rodeio - Centro, SC</p>
+      <p class="contact-item">Telefone: <a href="tel:+5511987654321" class="contact-link">(11)
+          98765-4321</a></p>
+      <p class="contact-item">Email: <a href="mailto:contato@burgerpremium.com"
+          class="contact-link">contato@burgerpremium.com</a></p>
+    </div>
+
+  </div>
+  <script src="js/contato.js"></script>
+</body>
+
+</html>
