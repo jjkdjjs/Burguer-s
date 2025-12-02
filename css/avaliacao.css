@@ -1,0 +1,189 @@
+:root {
+    --burned-yellow: #b97d26;
+    --dark-red: #a51512;
+    --orange-yellow: #e69823;
+    --light-beige: #eccca5;
+    --white: #fefefe;
+}
+body{
+    background: var(--light-beige);
+    margin: 10px;
+    padding: 10px 10px;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    /* Garante altura total da viewport */
+    display: flex;
+    flex-direction:inherit;
+}
+.container-ava {
+    position: relative;
+    z-index: 2;
+    /* Para ficar acima da imagem de fundo */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* Para quebrar em telas menores */
+    gap: 30px;
+    /* Espaço entre os cards */
+    max-width: 1100px;
+    width: 90%;
+    margin-top: 20px;
+}
+
+/* CARDS INDIVIDUAIS DE AVALIAÇÃO (O SEGREDO DA TRANSPARÊNCIA) */
+.card-avaliacao {
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+
+    /* Fundo semi-transparente (RGBA) e efeito glassmorphism */
+    background-color: rgba(30, 30, 30, 0.75);
+    /* Fundo escuro e 75% opaco */
+    backdrop-filter: blur(8px);
+    /* Efeito de "vidro embaçado" */
+
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    /* Borda mais visível */
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-avaliacao:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
+}
+
+/* Estilos de Tipografia e Detalhes */
+
+.perfil-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.avatar-cliente {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+    border: 3px solid var(--dark-red, #a51512);
+    /* Usando a cor de destaque do tema */
+}
+
+.nome-estrelas {
+    display: flex;
+    flex-direction: column;
+}
+
+.nome-cliente {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: var(--light-beige, #eccca5);
+    margin-bottom: 3px;
+}
+
+.estrelas {
+    color: #FFC400;
+    /* Cor dourada forte para as estrelas */
+    font-size: 1em;
+    letter-spacing: 1px;
+}
+
+.depoimento {
+    font-size: 1em;
+    line-height: 1.6;
+    color: var(--light-beige, #eccca5);
+    margin: 0;
+    font-style: italic;
+}
+
+.button-ava {
+    margin-top: 150px;
+    padding: 12px 28px;
+    font-size: 1.1em;
+    color: white;
+    background-color: var(--orange-yellow, #e69823);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button-ava:hover {
+    background-color: #d4881f;
+    transform: translateY(-3px);
+}
+.footer-premium {
+    background-color: var(--dark-red, #a51512);
+    color: var(--light-beige, #eccca5);
+    font-family: "Inter", sans-serif;
+    width: 100%;
+    margin-top: 80px;
+}
+
+.footer-top-section {
+    background-color: var(--card-dark, #1f1f1f);
+    padding: 60px 40px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+
+    border-top: 5px solid var(--orange-yellow, #e69823);
+}
+
+
+
+.footer-mid-section {
+    background: var(--dark-red, #a51512);
+    padding: 60px 40px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin: 12px 0;
+}
+
+.footer-links a {
+    color: var(--light-beige, #eccca5);
+    text-decoration: none;
+    font-size: 1em;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    padding-left: 6px;
+    color: var(--orange-yellow, #e69823);
+    text-shadow: 0 0 6px rgba(255, 200, 100, 0.5);
+}
+
+.contact-item {
+    margin-bottom: 10px;
+}
+
+.contact-link {
+    color: var(--orange-yellow, #e69823);
+    text-decoration: none;
+}
+
+.contact-link:hover {
+    text-decoration: underline;
+}

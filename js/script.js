@@ -1,5 +1,5 @@
 const track = document.getElementById('track');
-let cards = Array.from(document.querySelectorAll('.card')); 
+let cards = Array.from(document.querySelectorAll('.card'));
 
 // Variáveis de controle de movimento
 const scrollSpeed = 0.1; // Velocidade LENTA de rolagem (AJUSTE AQUI)
@@ -16,7 +16,7 @@ let isMouseOver = false; // Estado para saber se o usuário está com o mouse em
 
 function highlightCard(index) {
     // Garante que o índice não saia dos limites do array
-    if (index < 0 || index >= cards.length) return; 
+    if (index < 0 || index >= cards.length) return;
 
     cards.forEach(c => c.classList.remove('active'));
     cards[index].classList.add('active');
@@ -27,31 +27,31 @@ function highlightCard(index) {
 
 function animate() {
     if (cards.length === 0) return;
-    
+
     // 1. Cálculos de Largura
-    const cardWidth = cards[0].offsetWidth; 
+    const cardWidth = cards[0].offsetWidth;
     const margin = parseFloat(window.getComputedStyle(cards[0]).marginRight || 0);
     const itemWidthWithMargin = cardWidth + margin;
 
-    const contentWidth = itemWidthWithMargin * cards.length; 
+    const contentWidth = itemWidthWithMargin * cards.length;
     const containerWidth = track.parentElement.offsetWidth;
-    const maxScroll = contentWidth - containerWidth; 
+    const maxScroll = contentWidth - containerWidth;
 
     // 2. Aplica o Movimento na Direção Atual
     pos -= scrollSpeed * direction;
-    
+
     // 3. Lógica de INVERSÃO (Vai e Volta)
     if (Math.abs(pos) >= maxScroll) {
-        direction = -1; 
+        direction = -1;
     }
     if (pos >= 0) {
-        direction = 1; 
-        pos = 0; 
+        direction = 1;
+        pos = 0;
     }
 
     // 4. Aplica a Transição
     track.style.transform = `translateX(${pos}px)`;
-    
+
     // 💥 5. CÁLCULO DE DESTAQUE PRECISO (SÓ RODA SE O MOUSE NÃO ESTIVER EM CIMA)
     if (!isMouseOver) {
         const currentScroll = Math.abs(pos);
@@ -63,7 +63,7 @@ function animate() {
             highlightCard(activeIndex);
         }
     }
-    
+
     // 6. Continua o Loop
     animationFrameId = requestAnimationFrame(animate);
 }
@@ -79,10 +79,10 @@ let scrollLeftInitial;
 track.addEventListener('mousedown', (e) => {
     isDragging = true;
     cancelAnimationFrame(animationFrameId); // Para a rolagem automática
-    
+
     startX = e.pageX - track.offsetLeft;
     scrollLeftInitial = Math.abs(pos);
-    
+
     isMouseOver = true; // Sinaliza que o usuário está interagindo
 });
 
@@ -90,26 +90,26 @@ track.addEventListener('mousedown', (e) => {
 track.addEventListener('mousemove', (e) => {
     if (!isDragging) return;
     e.preventDefault();
-    
+
     const x = e.pageX - track.offsetLeft;
     const walk = (x - startX);
 
-    let newPos = -(scrollLeftInitial - walk); 
+    let newPos = -(scrollLeftInitial - walk);
 
     // Limites (para não sair da tela)
-    const cardWidth = cards[0].offsetWidth; 
+    const cardWidth = cards[0].offsetWidth;
     const margin = parseFloat(window.getComputedStyle(cards[0]).marginRight || 0);
     const itemWidthWithMargin = cardWidth + margin;
-    const contentWidth = itemWidthWithMargin * cards.length; 
+    const contentWidth = itemWidthWithMargin * cards.length;
     const containerWidth = track.parentElement.offsetWidth;
-    const maxScroll = contentWidth - containerWidth; 
+    const maxScroll = contentWidth - containerWidth;
 
     if (newPos > 0) newPos = 0;
     if (Math.abs(newPos) > maxScroll) newPos = -maxScroll;
 
     pos = newPos;
     track.style.transform = `translateX(${pos}px)`;
-    
+
     // Destaque durante o arrasto: Mantenha o destaque no card mais à esquerda
     const currentScroll = Math.abs(pos);
     const newIndex = Math.floor(currentScroll / itemWidthWithMargin);
@@ -121,7 +121,7 @@ track.addEventListener('mouseup', () => {
     isDragging = false;
     isMouseOver = false;
     // Retoma a animação automática
-    animationFrameId = requestAnimationFrame(animate); 
+    animationFrameId = requestAnimationFrame(animate);
 });
 
 // 4. Mouse LEAVE (Sai do Track)
@@ -147,7 +147,7 @@ cards.forEach((card, index) => {
 // --- 4. Inicialização ---
 
 window.addEventListener('load', () => {
-    animate(); 
+    animate();
     highlightCard(0);
 });
 

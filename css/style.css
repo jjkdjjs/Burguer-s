@@ -100,18 +100,18 @@ body {
     position: relative;
 }
 
-    .carousel-container {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        padding: 100px 0;
-    }
+.carousel-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 100px 0;
+}
 
-    .carousel-track {
-        display: flex;
-        gap: 40px;
-        transition: transform 0.9s ease;
-    }
+.carousel-track {
+    display: flex;
+    gap: 40px;
+    transition: transform 0.9s ease;
+}
 
 .menu {
     text-align: center;
@@ -874,6 +874,7 @@ body {
 .contact-link:hover {
     text-decoration: underline;
 }
+
 /* ================================
         RESPONSIVIDADE
 ================================ */
