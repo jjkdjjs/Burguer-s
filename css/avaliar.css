@@ -4,190 +4,225 @@
     --orange-yellow: #e69823;
     --light-beige: #eccca5;
     --white: #fefefe;
+
+    /* Cores usadas nos componentes */
+    --stroke: #666;
+    --fill: #ffc73a;
 }
+
 body {
-  font-family: 'Arial', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f9f9f9;
-}
-/* From Uiverse.io by SelfMadeSystem */ 
-.rating {
-  display: flex;
-  flex-direction: row-reverse;
-  gap: 0.3rem;
-  --stroke: #666;
-  --fill: #ffc73a;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
 }
 
-.rating input {
-  appearance: unset;
+/* Cabeçalho */
+.menu {
+    text-align: center;
+    padding: 20px;
 }
 
-.rating label {
-  cursor: pointer;
+.menu h1 {
+    color: var(--burned-yellow);
+    margin-bottom: 5px;
 }
 
-.rating svg {
-  width: 2rem;
-  height: 2rem;
-  overflow: visible;
-  fill: transparent;
-  stroke: var(--stroke);
-  stroke-linejoin: bevel;
-  stroke-dasharray: 12;
-  animation: idle 4s linear infinite;
-  transition: stroke 0.2s, fill 0.5s;
+.menu p {
+    color: #555;
 }
 
-@keyframes idle {
-  from {
-    stroke-dashoffset: 24;
-  }
+/* Conteúdo geral */
+.content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
 }
 
-.rating label:hover svg {
-  stroke: var(--fill);
+/* Input + botão de envio */
+.form-container {
+    display: flex;
+    gap: 15px;
+    align-items: center;
 }
 
-.rating input:checked ~ label svg {
-  transition: 0s;
-  animation: idle 4s linear infinite, yippee 0.75s backwards;
-  fill: var(--fill);
-  stroke: var(--fill);
-  stroke-opacity: 0;
-  stroke-dasharray: 0;
-  stroke-linejoin: miter;
-  stroke-width: 8px;
+.form {
+    padding: 12px 18px;
+    width: 330px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 2px solid #ddd;
+    outline: none;
+    transition: .3s;
+    color: #333;
 }
 
-@keyframes yippee {
-  0% {
-    transform: scale(1);
-    fill: var(--fill);
-    fill-opacity: 0;
-    stroke-opacity: 1;
-    stroke: var(--stroke);
-    stroke-dasharray: 10;
-    stroke-width: 1px;
-    stroke-linejoin: bevel;
-  }
-
-  30% {
-    transform: scale(0);
-    fill: var(--fill);
-    fill-opacity: 0;
-    stroke-opacity: 1;
-    stroke: var(--stroke);
-    stroke-dasharray: 10;
-    stroke-width: 1px;
-    stroke-linejoin: bevel;
-  }
-
-  30.1% {
-    stroke: var(--fill);
-    stroke-dasharray: 0;
-    stroke-linejoin: miter;
-    stroke-width: 8px;
-  }
-
-  60% {
-    transform: scale(1.2);
-    fill: var(--fill);
-  }
+.form:focus {
+    border-color: var(--orange-yellow);
 }
 
-/* From Uiverse.io by eirikvold */ 
+/* Botão enviar */
 button {
-  font-family: inherit;
-  font-size: 18px;
-  background: linear-gradient(to bottom, #4dc7d9 0%,#66a6ff 100%);
-  color: white;
-  padding: 0.8em 1.2em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: none;
-  border-radius: 25px;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s;
+    font-family: inherit;
+    font-size: 18px;
+    background: linear-gradient(to bottom, #4dc7d9 0%, #66a6ff 100%);
+    color: white;
+    padding: 0.8em 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+    cursor: pointer;
 }
 
 button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
 }
 
 button:active {
-  transform: scale(0.95);
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    transform: scale(0.95);
 }
 
 button span {
-  display: block;
-  margin-left: 0.4em;
-  transition: all 0.3s;
+    margin-left: 8px;
+    transition: all 0.3s;
 }
 
 button svg {
-  width: 18px;
-  height: 18px;
-  fill: white;
-  transition: all 0.3s;
+    width: 20px;
+    height: 20px;
+    fill: white;
 }
 
-button .svg-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.2);
-  margin-right: 0.5em;
-  transition: all 0.3s;
+.svg-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.25);
+    padding: 8px;
+    border-radius: 50%;
 }
 
 button:hover .svg-wrapper {
-  background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 button:hover svg {
-  transform: rotate(45deg);
+    transform: rotate(45deg);
 }
-/* From Uiverse.io by Jedi-hongbin */ 
+
+.rating {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 0.3rem;
+}
+
+.rating input {
+    appearance: none;
+}
+
+.rating label {
+    cursor: pointer;
+}
+
+.rating svg {
+    width: 2rem;
+    height: 2rem;
+    fill: transparent;
+    stroke: var(--stroke);
+    stroke-linejoin: bevel;
+    stroke-dasharray: 12;
+    animation: idle 4s linear infinite;
+    transition: stroke 0.2s, fill 0.5s;
+}
+
+@keyframes idle {
+    from {
+        stroke-dashoffset: 24;
+    }
+}
+
+.rating label:hover svg {
+    stroke: var(--fill);
+}
+
+.rating input:checked ~ label svg {
+    transition: 0s;
+    animation: idle 4s linear infinite, yippee 0.75s backwards;
+    fill: var(--fill);
+    stroke: var(--fill);
+    stroke-opacity: 0;
+    stroke-dasharray: 0;
+    stroke-linejoin: miter;
+    stroke-width: 8px;
+}
+
+@keyframes yippee {
+    0% {
+        transform: scale(1);
+        fill: var(--fill);
+        fill-opacity: 0;
+        stroke-opacity: 1;
+        stroke: var(--stroke);
+        stroke-dasharray: 10;
+        stroke-width: 1px;
+        stroke-linejoin: bevel;
+    }
+
+    30% {
+        transform: scale(0);
+        fill: var(--fill);
+        fill-opacity: 0;
+        stroke-opacity: 1;
+        stroke: var(--stroke);
+        stroke-dasharray: 10;
+        stroke-width: 1px;
+        stroke-linejoin: bevel;
+    }
+
+    30.1% {
+        stroke: var(--fill);
+        stroke-dasharray: 0;
+        stroke-linejoin: miter;
+        stroke-width: 8px;
+    }
+
+    60% {
+        transform: scale(1.2);
+        fill: var(--fill);
+    }
+}
+
 .voltar {
- display: flex;
- height: 3em;
- width: 100px;
- align-items: center;
- justify-content: center;
- background-color: #eeeeee4b;
- border-radius: 3px;
- letter-spacing: 1px;
- transition: all 0.2s linear;
- cursor: pointer;
- border: none;
- background: #fff;
+    display: flex;
+    height: 3em;
+    width: 120px;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
 }
 
-.voltar > svg {
- margin-right: 5px;
- margin-left: 5px;
- font-size: 20px;
- transition: all 0.4s ease-in;
+.voltar svg {
+    margin-right: 8px;
+    transition: 0.3s;
 }
 
-.voltar:hover > svg {
- font-size: 1.2em;
- transform: translateX(-5px);
+.voltar:hover svg {
+    transform: translateX(-5px);
+    font-size: 1.2em;
 }
 
 .voltar:hover {
- box-shadow: 9px 9px 33px #d1d1d1, -9px -9px 33px #ffffff;
- transform: translateY(-2px);
+    box-shadow: 9px 9px 33px #d1d1d1, -9px -9px 33px #ffffff;
+    transform: translateY(-2px);
 }
-
-
-
-

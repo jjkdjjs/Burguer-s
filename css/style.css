@@ -30,15 +30,10 @@ body {
     padding: 6px 0;
     text-decoration: none;
     letter-spacing: 0.5px;
-
-    /* brilho leve no texto */
     text-shadow: 0 0 6px rgba(255, 160, 80, 0.4);
-
-    /* transição suave */
     transition: color 0.35s ease, text-shadow 0.35s ease;
 }
 
-/* linha animada com efeito “energia” */
 .navbar a::after {
     content: "";
     position: absolute;
@@ -46,21 +41,15 @@ body {
     bottom: -4px;
     width: 100%;
     height: 3px;
-
-    /* linha inicialmente invisível */
     transform: scaleX(0);
     transform-origin: left;
     opacity: 0;
-
-    /* gradiente “premium” */
     background: linear-gradient(90deg,
             #ff9b40,
             #ffcc66,
             #ff9b40);
 
     border-radius: 3px;
-
-    /* animação */
     transition: transform 0.35s ease, opacity 0.35s ease;
 }
 
@@ -115,13 +104,10 @@ body {
 
 .menu {
     text-align: center;
-    /* Centraliza o texto */
     font-size: 32px;
-    /* Aumenta o tamanho para destaque */
     padding-bottom: 60px;
     margin: 0;
     color: white;
-    /* Usa a cor vermelha escura definida (var(--dark-red): #a51512) */
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
@@ -183,7 +169,6 @@ body {
     font-size: 17px;
 }
 
-/*/* From Uiverse.io by JaydipPrajapati1910 */
 .button-buy {
     --button-color: #b70608;
     --tooltip-color: #fff;
@@ -252,7 +237,6 @@ body {
 }
 
 .more-btn {
-    /* Propriedades de estilo do botão "Peça agora" */
     background: var(--orange-yellow);
     color: #000;
     font-weight: bold;
@@ -262,147 +246,94 @@ body {
     cursor: pointer;
     font-size: 18px;
     transition: 0.3s;
-
-    /* ⬅️ RESTAURANDO POSIÇÃO ORIGINAL ⬅️ */
     display: block;
-    /* Ocupa a largura total (ou a necessária) */
     margin: 40px auto;
-    /* Centraliza horizontalmente e adiciona margem superior/inferior */
     position: relative;
-    /* Voltando para o posicionamento normal do fluxo */
     z-index: auto;
-    /* Z-index não é mais necessário */
     transform: none;
-    /* Remove a transformação de centralização vertical */
     left: auto;
-    /* Remove o posicionamento da esquerda */
     top: -45px;
-    /* Remove o posicionamento do topo */
-    /* ------------------------------------------- */
 }
 
 .more-btn:hover {
     transform: scale(1.05);
 }
 
-/* CONTAINER PRINCIPAL DO CONTEÚDO (ajustando o .hora-loc para o layout) */
 .hora-loc {
-    /* Centralização em um bloco de 800px */
     max-width: 800px;
     width: 90%;
     margin-left: 20px;
     /* Centraliza */
     margin-right: auto;
-    /* Centraliza */
-
-    /* Layout interno: Horário e Localização lado a lado */
     display: flex;
     justify-content: space-around;
     gap: 40px;
-    /* Aumenta o espaço entre as colunas */
-
     padding: 40px 20px;
-    /* Padding interno */
     margin-top: 70px;
-    /* Espaço do topo */
     color: white;
     top: 77px;
-
     position: relative;
     z-index: 2;
-
-    /* Contorno sutil para o bloco (opcional, adicionei para destaque) */
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
     background-color: rgba(30, 30, 30, 0.8);
-    /* Fundo semi-transparente escuro */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
-
-/* Blocos Individuais: Garante o alinhamento de texto e flexibilidade */
 .hora,
 .loc {
     flex: 1;
-    /* Ocupam espaço igual */
     text-align: center;
-    /* Centraliza o texto dentro da coluna */
     position: relative;
     padding: 0 20px;
 }
 
-/* Divisória Vertical Única (Pseudo-elemento no bloco .hora) */
-/* Cria uma linha vertical no meio do .hora-loc */
 .hora::after {
     content: '';
     position: absolute;
     top: 10%;
-    /* Início no topo */
     right: -20px;
-    /* Posiciona no meio da margem de 40px */
     height: 80%;
-    /* Altura da linha */
     width: 2px;
-
-    /* Gradiente sutil para a divisória */
     background: linear-gradient(to bottom,
             rgba(255, 255, 255, 0.1),
-            /* Sutil no topo */
             var(--orange-yellow, #e69823),
-            /* Cor de destaque no centro */
             rgba(255, 255, 255, 0.1)
-            /* Sutil no rodapé */
         );
     border-radius: 1px;
 }
 
-/* Títulos: Estilo de destaque (usando uma cor clara de acento) */
 .hora-titulo,
 .loc-titulo {
     font-size: 1.8em;
     font-weight: 700;
     margin-bottom: 15px;
     color: var(--orange-yellow, #e69823);
-    /* Cor de destaque para os títulos */
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
-/* Texto de Horário/Endereço */
 .textinho {
     font-size: 1.1em;
     margin: 8px 0;
     color: var(--light-beige, #eccca5);
-    /* Cor mais suave para o corpo do texto */
 }
 
 .mapas-container-row {
-    /* FLUTUA O MAPA PARA A DIREITA */
     float: right;
-
-    /* Puxa o mapa para cima para que ele fique ao lado do .hora-loc (AJUSTE CRÍTICO) */
-    /* ATENÇÃO: Se o mapa não subir o suficiente, aumente este valor (ex: -350px) */
     margin-top: -200px;
-
-    /* Espaçamento da borda direita da tela */
     margin-right: 5%;
-
-    /* Redefinições para o float funcionar */
     position: static;
     top: auto;
     width: 350px;
-    /* Largura definida para o mapa */
     height: auto;
     padding: 0;
     display: block;
-    /* Garante que funcione como bloco */
 }
 
 .mapa-item {
-    /* Remove margens internas desnecessárias */
     margin: 0;
 }
 
-/* 2. Estilo para a área de incorporação do mapa: Quadrado e Fixo */
 .mapa-embed {
     width: 350px;
     height: 300px;
@@ -431,51 +362,31 @@ body {
     justify-content: center;
 }
 
-/* From Uiverse.io by mrhyddenn */
 .container-card-box {
     display: flex;
     align-items: center;
-    /* Centraliza verticalmente o card */
     justify-content: center;
-    /* Centraliza horizontalmente o card(s) */
     gap: 40px;
-    /* Espaço entre cards se houver mais de um */
-
-    /* Remove as margens fixas para centralizar o bloco */
     margin-top: 71px;
     margin-left: 0;
 }
 
-/* ------------------------------------------------ */
-/* CARD BOX (Aprimoramento Visual) */
-/* ------------------------------------------------ */
 .card_box {
     width: 250px;
-    /* Aumentado um pouco para melhor visualização */
     height: 300px;
-    /* Aumentado um pouco */
     border-radius: 20px;
-
-    /* Gradiente de fundo mais suave e elegante */
     background: linear-gradient(170deg, rgba(58, 56, 56, 0.6) 0%, var(--card-dark) 100%);
-    /* Borda sutil, usando a cor do cartão */
     border: 1px solid rgba(255, 255, 255, 0.05);
-
     position: relative;
-
-    /* Sombra mais pronunciada */
     box-shadow: 0 30px 60px var(--shadow-color);
     cursor: pointer;
     transition: all .4s ease-in-out;
-
-    /* Adiciona padding interno para o texto não encostar nas bordas */
     padding: 20px;
     box-sizing: border-box;
 }
 
 .card_box:hover {
     transform: scale(1.05);
-    /* Efeito flutuante mais agradável */
     box-shadow: 0 40px 70px, 0 0 20px var(--dark-red);
 }
 
@@ -483,47 +394,35 @@ body {
     color: var(--orange-yellow);
     font-size: 1.8em;
     margin-top: 20px;
-    /* Espaçamento abaixo do selo */
     margin-bottom: 10px;
     font-weight: 800;
     text-shadow: 0 0 5px rgba(255, 160, 80, 0.3);
     text-align: center;
-    /* Centraliza o título */
 }
 
-/* Seu parágrafo de texto */
 .texto {
-    /* Removido margens fixas para centralizar */
     margin-top: 10px;
     margin-left: 0;
-
     color: var(--light-beige);
-    /* Cor mais agradável */
     font-size: 1em;
-    /* Tamanho ajustado */
     line-height: 1.5;
     text-align: center;
-    /* Centralizado ou justificado, centralizado é mais limpo */
     padding: 0 5px;
 }
 
 .section-avaliacoes {
     position: relative;
-    /* Essencial para posicionar elementos internos */
     width: 100%;
     min-height: 700px;
-    /* Altura mínima para mostrar a imagem e os cards */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 80px 0;
-    /* Espaço para o topo e base da seção */
 
     z-index: 10;
 }
 
-/* Imagem de Fundo da Seção */
 .imagem-fundo-avaliacoes {
     position: absolute;
     top: 300px;
@@ -532,17 +431,14 @@ body {
     height: 100%;
     overflow: hidden;
     z-index: 1;
-    /* Fica abaixo dos cards */
 }
 
 .imagem-ava {
     width: 100%;
     height: auto;
     object-fit: cover;
-    /* Cobre a área sem distorcer */
     object-position: center;
     opacity: 0.5;
-    /* Deixa a imagem mais escura/sutil */
 }
 
 /* Título da Seção */
@@ -550,7 +446,6 @@ body {
     position: relative;
     font-size: 3.2em;
     color: var(--orange-yellow, #e69823);
-    /* Usa a variável do ROOT */
     margin-bottom: 50px;
     text-shadow: 0 0 10px rgba(255, 160, 80, 0.5);
     font-weight: 800;
@@ -559,39 +454,28 @@ body {
 }
 
 
-/* CONTAINER DOS CARDS DE AVALIAÇÃO */
 .container-ava {
     position: relative;
     z-index: 2;
-    /* Para ficar acima da imagem de fundo */
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    /* Para quebrar em telas menores */
     gap: 30px;
-    /* Espaço entre os cards */
     max-width: 1100px;
     width: 90%;
     margin-top: 20px;
 }
 
-/* CARDS INDIVIDUAIS DE AVALIAÇÃO (O SEGREDO DA TRANSPARÊNCIA) */
 .card-avaliacao {
     flex: 1;
     min-width: 280px;
     max-width: 350px;
-
-    /* Fundo semi-transparente (RGBA) e efeito glassmorphism */
     background-color: rgba(30, 30, 30, 0.75);
-    /* Fundo escuro e 75% opaco */
     backdrop-filter: blur(8px);
-    /* Efeito de "vidro embaçado" */
-
     border-radius: 15px;
     padding: 25px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
     border: 1px solid rgba(255, 255, 255, 0.15);
-    /* Borda mais visível */
     margin-top: 30px;
     display: flex;
     flex-direction: column;
@@ -605,7 +489,6 @@ body {
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
 }
 
-/* Estilos de Tipografia e Detalhes */
 
 .perfil-info {
     display: flex;
@@ -620,7 +503,6 @@ body {
     object-fit: cover;
     margin-right: 15px;
     border: 3px solid var(--dark-red, #a51512);
-    /* Usando a cor de destaque do tema */
 }
 
 .nome-estrelas {
@@ -637,7 +519,6 @@ body {
 
 .estrelas {
     color: #FFC400;
-    /* Cor dourada forte para as estrelas */
     font-size: 1em;
     letter-spacing: 1px;
 }
@@ -875,11 +756,6 @@ body {
     text-decoration: underline;
 }
 
-/* ================================
-        RESPONSIVIDADE
-================================ */
-
-/* ----- TELAS MUITO GRANDES (monitores 1600px+) ----- */
 @media (min-width: 1600px) {
     .container {
         max-width: 1500px;
@@ -891,14 +767,12 @@ body {
     }
 }
 
-/* ----- TELAS GRANDES (desktops normais) ----- */
 @media (max-width: 1400px) {
     .container {
         padding: 0 40px;
     }
 }
 
-/* ----- LAPTOPS E TABLETS HORIZONTAIS ----- */
 @media (max-width: 1200px) {
     .cards {
         grid-template-columns: repeat(3, 1fr);
@@ -906,7 +780,6 @@ body {
     }
 }
 
-/* ----- TABLETS ----- */
 @media (max-width: 900px) {
     .cards {
         grid-template-columns: repeat(2, 1fr);
@@ -916,8 +789,6 @@ body {
         font-size: 2rem;
     }
 }
-
-/* ----- CELULARES GRANDES ----- */
 @media (max-width: 600px) {
     .cards {
         grid-template-columns: 1fr;
@@ -937,7 +808,6 @@ body {
     }
 }
 
-/* ----- CELULARES PEQUENOS ----- */
 @media (max-width: 400px) {
     .card {
         font-size: 0.9rem;
