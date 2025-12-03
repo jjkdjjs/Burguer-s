@@ -11,16 +11,64 @@
 <body>
 
     <section class="menu">
-        <h1>Deixe sua avaliação</h1>
+        <h1>Deixe sua Avaliação</h1>
         <p>Sua opinião é muito importante para nós!</p>
     </section>
 
     <section class="content">
 
-        <div class="form-container">
-            <input class="form" id="avaInput" type="text" placeholder="Deixe sua avaliação aqui..." required>
+        <form class="avaliacao-form" id="avaliacaoForm">
 
-            <button id="sendBtn">
+            <div class="input-group">
+                <input class="form" id="nameInput" type="text" placeholder="Seu Nome Completo" required>
+            </div>
+
+            <div class="input-group">
+    <label for="profilePicture">Foto de Perfil (Arquivo):</label>
+    <input type="file" id="profilePicture" accept="image/*">
+</div>
+
+            <div class="input-group">
+                <textarea class="form textarea-ava" id="avaInput" placeholder="Deixe sua avaliação aqui..." required></textarea>
+            </div>
+
+
+            <div class="rating-group">
+                <label class="rating-label">Sua Nota:</label>
+                <div class="rating">
+                    <input type="radio" id="star-5" name="rating" value="5" required>
+                    <label for="star-5">
+                        <svg viewBox="0 0 24 24"><path pathLength="360"
+                        d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"/></svg>
+                    </label>
+
+                    <input type="radio" id="star-4" name="rating" value="4">
+                    <label for="star-4">
+                        <svg viewBox="0 0 24 24"><path pathLength="360"
+                        d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"/></svg>
+                    </label>
+
+                    <input type="radio" id="star-3" name="rating" value="3">
+                    <label for="star-3">
+                        <svg viewBox="0 0 24 24"><path pathLength="360"
+                        d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"/></svg>
+                    </label>
+
+                    <input type="radio" id="star-2" name="rating" value="2">
+                    <label for="star-2">
+                        <svg viewBox="0 0 24 24"><path pathLength="360"
+                        d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"/></svg>
+                    </label>
+
+                    <input type="radio" id="star-1" name="rating" value="1">
+                    <label for="star-1">
+                        <svg viewBox="0 0 24 24"><path pathLength="360"
+                        d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"/></svg>
+                    </label>
+                </div>
+            </div>
+
+            <button id="sendBtn" type="submit">
                 <div class="svg-wrapper">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                         <path fill="none" d="M0 0h24v24H0z"></path>
@@ -29,42 +77,10 @@
                         </path>
                     </svg>
                 </div>
-                <span>Enviar</span>
+                <span>Enviar Avaliação</span>
             </button>
-        </div>
-
-        <div class="rating">
-            <input type="radio" id="star-5" name="rating" value="5">
-            <label for="star-5">
-                <svg viewBox="0 0 24 24"><path pathLength="360"
-                d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"/></svg>
-            </label>
-
-            <input type="radio" id="star-4" name="rating" value="4">
-            <label for="star-4">
-                <svg viewBox="0 0 24 24"><path pathLength="360"
-                d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"/></svg>
-            </label>
-
-            <input type="radio" id="star-3" name="rating" value="3">
-            <label for="star-3">
-                <svg viewBox="0 0 24 24"><path pathLength="360"
-                d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"/></svg>
-            </label>
-
-            <input type="radio" id="star-2" name="rating" value="2">
-            <label for="star-2">
-                <svg viewBox="0 0 24 24"><path pathLength="360"
-                d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"/></svg>
-            </label>
-
-            <input type="radio" id="star-1" name="rating" value="1">
-            <label for="star-1">
-                <svg viewBox="0 0 24 24"><path pathLength="360"
-                d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"/></svg>
-            </label>
-        </div>
-
+        </form>
+        
         <a href="avaliacao.html">
             <button class="voltar">
                 <svg height="16" width="16" viewBox="0 0 1024 1024">

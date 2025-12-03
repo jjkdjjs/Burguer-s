@@ -41,16 +41,28 @@ body {
     align-items: center;
 }
 
-/* Input + botão de envio */
-.form-container {
+/* NOVO: Estilo para o formulário */
+.avaliacao-form {
     display: flex;
+    flex-direction: column; /* Coloca os inputs em coluna */
     gap: 15px;
-    align-items: center;
+    width: 100%;
+    max-width: 500px; /* Limita a largura do formulário para melhor leitura */
+    background: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+.input-group {
+    width: 100%;
+}
+
+/* Input (mantém seu estilo base) */
 .form {
     padding: 12px 18px;
-    width: 330px;
+    width: 100%; /* Ocupa a largura total do seu .input-group */
+    box-sizing: border-box; /* Garante que padding e border não aumentem a largura */
     font-size: 16px;
     border-radius: 8px;
     border: 2px solid #ddd;
@@ -63,59 +75,67 @@ body {
     border-color: var(--orange-yellow);
 }
 
-/* Botão enviar */
-button {
-    font-family: inherit;
-    font-size: 18px;
-    background: linear-gradient(to bottom, #4dc7d9 0%, #66a6ff 100%);
-    color: white;
-    padding: 0.8em 1.2em;
+/* NOVO: Estilo para o campo de texto grande */
+.textarea-ava {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Estilos para o grupo de estrelas */
+.rating-group {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    border: none;
-    border-radius: 25px;
+    gap: 10px;
+    padding: 10px 0;
+    border-top: 1px dashed #ddd;
+    border-bottom: 1px dashed #ddd;
+}
+
+.rating-label {
+    font-weight: bold;
+    color: #555;
+    font-size: 1.1em;
+}
+
+/* Botão ENVIAR (seu estilo original) */
+#sendBtn {
+    /* Use as cores temáticas para o botão de envio */
+    background: linear-gradient(to right, var(--burned-yellow) 0%, var(--orange-yellow) 100%);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1em;
+    width: 100%; /* Faz o botão ocupar a largura total do formulário */
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
     transition: all 0.3s;
     cursor: pointer;
 }
 
-button:hover {
+#sendBtn:hover {
     transform: translateY(-3px);
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
 }
 
-button:active {
-    transform: scale(0.95);
+#sendBtn:active {
+    transform: scale(0.98);
 }
 
-button span {
-    margin-left: 8px;
-    transition: all 0.3s;
+#sendBtn svg {
+    width: 18px;
+    height: 18px;
 }
 
-button svg {
-    width: 20px;
-    height: 20px;
-    fill: white;
-}
-
-.svg-wrapper {
+/* Mantém os estilos do Rating (estrelas) */
+.rating {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(255, 255, 255, 0.25);
-    padding: 8px;
-    border-radius: 50%;
+    flex-direction: row-reverse;
+    gap: 0.3rem;
+    /* ... (restante do código de rating, animações, etc.) ... */
 }
+/* ... (Mantenha o restante do seu código CSS abaixo, incluindo as animações de SVG e o botão voltar) ... */
 
-button:hover .svg-wrapper {
-    background-color: rgba(255, 255, 255, 0.5);
-}
-
-button:hover svg {
-    transform: rotate(45deg);
-}
+/* Estilos de Rating e Animações (Certifique-se de manter todo o bloco de CSS original para .rating) */
 
 .rating {
     display: flex;
@@ -199,6 +219,7 @@ button:hover svg {
     }
 }
 
+/* Botão Voltar (seu estilo original) */
 .voltar {
     display: flex;
     height: 3em;
@@ -225,4 +246,11 @@ button:hover svg {
 .voltar:hover {
     box-shadow: 9px 9px 33px #d1d1d1, -9px -9px 33px #ffffff;
     transform: translateY(-2px);
+}
+/* Estilo para o card que o usuário acabou de enviar, para destacá-lo */
+.card-avaliacao.user-generated {
+    border: 2px solid var(--orange-yellow);
+    box-shadow: 0 4px 15px rgba(230, 152, 35, 0.4); /* Sombra laranja */
+    position: relative; /* Necessário para posicionar o botão de exclusão */
+    padding-bottom: 40px; /* Dá espaço para o botão de exclusão */
 }
