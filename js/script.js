@@ -52,7 +52,7 @@ function animate() {
     // 4. Aplica a Transição
     track.style.transform = `translateX(${pos}px)`;
 
-    // 💥 5. CÁLCULO DE DESTAQUE PRECISO (SÓ RODA SE O MOUSE NÃO ESTIVER EM CIMA)
+    // 5. CÁLCULO DE DESTAQUE PRECISO (SÓ RODA SE O MOUSE NÃO ESTIVER EM CIMA)
     if (!isMouseOver) {
         const currentScroll = Math.abs(pos);
         // Calcula o índice do card que está na borda esquerda
@@ -131,11 +131,11 @@ track.addEventListener('mouseleave', () => {
 });
 
 
-// 💥 5. INTERAÇÃO APENAS COM HOVER (Se o mouse entra sem arrastar)
+// 5. INTERAÇÃO APENAS COM HOVER (Se o mouse entra sem arrastar)
 cards.forEach((card, index) => {
     card.addEventListener("mouseenter", () => {
         isMouseOver = true; // Sinaliza que o mouse está em um card
-        highlightCard(index); // 🎯 DESTAQUE IMEDIATO NO CARD QUE O MOUSE ESTÁ
+        highlightCard(index); // DESTAQUE IMEDIATO NO CARD QUE O MOUSE ESTÁ
     });
 
     card.addEventListener("mouseleave", () => {

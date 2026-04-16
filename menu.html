@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Delicioso</title>
+    <style>
+        :root {
+            --burned-yellow: #b97d26;
+            /* Amarelo-Queimado/Mostarda */
+            --dark-red: #a51512;
+            /* Vermelho Escuro/Tijolo (Acento Principal) */
+            --orange-yellow: #e69823;
+            /* Amarelo Laranja (Destaque/Preço) */
+            --light-beige: #eccca5;
+            /* Bege Claro (Fundo ou Detalhe) */
+            --white: #fefefe;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-beige);
+            /* Fundo da página em bege claro */
+            color: #333;
+        }
+
+        .menu-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--dark-red);
+            /* Título principal em vermelho escuro */
+            margin-bottom: 30px;
+            font-size: 3em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* --- NAVEGAÇÃO RÁPIDA (FIXADA NO TOPO) --- */
+        .nav-menu {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background-color: var(--burned-yellow);
+            /* Fundo da navegação em amarelo queimado */
+            padding: 10px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            /* Sombra mais destacada */
+        }
+
+        .nav-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        .nav-menu ul li {
+            display: inline-block;
+            margin: 0 15px;
+        }
+
+        .nav-menu ul li a {
+            text-decoration: none;
+            color: var(--white);
+            /* Texto do link em branco */
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 6px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-menu ul li a:hover {
+            background-color: var(--dark-red);
+            /* Hover em vermelho escuro */
+        }
+
+        /* --- SEÇÕES DO MENU --- */
+        .menu-section {
+            padding-top: 50px;
+            margin-bottom: 40px;
+        }
+
+        .menu-section h2 {
+            font-size: 2.5em;
+            color: var(--dark-red);
+            /* Título da seção em vermelho escuro */
+            border-bottom: 3px solid var(--orange-yellow);
+            /* Linha divisória em amarelo laranja */
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        /* --- LAYOUT DE CARDS (GRID) --- */
+        .card-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        /* --- ESTILOS DO CARD --- */
+        .card {
+            background-color: var(--white);
+            /* Fundo do card em branco */
+            border: 2px solid var(--burned-yellow);
+            /* Borda do card em amarelo queimado */
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            /* Sombra um pouco mais forte */
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            /* Elevado um pouco mais */
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            max-height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            font-size: 1.6em;
+            margin: 10px 0;
+            color: var(--dark-red);
+            /* Título do produto em vermelho escuro */
+        }
+
+        .card .desc {
+            color: #444;
+            font-size: 0.95em;
+            flex-grow: 1;
+            margin-bottom: 15px;
+        }
+
+        .card .price {
+            font-size: 2.2em;
+            color: var(--orange-yellow);
+            /* Preço em amarelo laranja para destaque de valor */
+            font-weight: 900;
+            margin: 15px 0;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        /* --- ESTILOS DO BOTÃO DE PEDIDO --- */
+        .button-buy {
+            background-color: var(--dark-red);
+            /* Botão em vermelho escuro */
+            color: var(--white);
+            border-radius: 50px;
+            padding: 12px 0;
+            text-transform: uppercase;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.1s;
+            width: 100%;
+        }
+
+        .button-buy:hover {
+            background-color: var(--burned-yellow);
+            /* Hover do botão em amarelo queimado */
+            transform: scale(1.02);
+        }
+
+        .button-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .button-wrapper .text {
+            margin-right: 8px;
+        }
+
+        .button-wrapper .icon svg {
+            fill: white;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Menu da Hamburgueria</h1>
+    </header>
+
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="#hamburgueres">Hambúrgueres</a></li>
+            <li><a href="#acompanhamentos">Acompanhamentos</a></li>
+            <li><a href="#bebidas">Bebidas</a></li>
+        </ul>
+    </nav>
+
+    <main class="menu-container">
+
+        <section class="menu-section" id="hamburgueres">
+            <h2>Hambúrgueres</h2>
+            <div class="card-list">
+
+                <div class="card active">
+                    <img src="https://static.wixstatic.com/media/891b87_99438f1b625447598162e0101329bfb9~mv2.png/v1/fill/w_980,h_980,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/viso-burger-main.png"
+                        alt="Smash Burger">
+                    <h3>Smash Burger</h3>
+                    <p class="desc">Carne smash fininha com casquinha crocante, queijo cheddar derretido e pão macio
+                        tostado na manteiga.</p>
+                    <p class="price">R$ 14,90</p>
+                    <a href="#link-do-pedido-smash" style="text-decoration: none;">
+                        <div class="button-buy">
+                            <div class="button-wrapper">
+                                <div class="text">Peça</div>
+                                <span class="icon">
+                                    <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16"
+                                        width="16" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z">
+                                        </path>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="card">
+                    <img src="https://via.placeholder.com/980x980/1e88e5/ffffff?text=Burger+Gourmet"
+                        alt="Burger Gourmet">
+                    <h3>Gourmet Cheddar</h3>
+                    <p class="desc">Blend de picanha 180g, queijo minas padrão, geleia de bacon defumado e rúcula
+                        fresca. Pão brioche.</p>
+                    <p class="price">R$ 32,50</p>
+                    <a href="#link-do-pedido-gourmet" style="text-decoration: none;">
+                        <div class="button-buy">
+                            <div class="button-wrapper">
+                                <div class="text">Peça</div>
+                                <span class="icon">
+                                    <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16"
+                                        width="16" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z">
+                                        </path>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="card">
+                    <img src="https://via.placeholder.com/980x980/ffaa00/ffffff?text=Chicken+Burger"
+                        alt="Chicken Burger">
+                    <h3>Chicken Crispy</h3>
+                    <p class="desc">Filé de coxa de frango empanado crocante, maionese de alho e alface americana. Leve
+                        e saboroso.</p>
+                    <p class="price">R$ 25,90</p>
+                    <a href="#link-do-pedido-chicken" style="text-decoration: none;">
+                        <div class="button-buy">
+                            <div class="button-wrapper">
+                                <div class="text">Peça</div>
+                                <span class="icon">
+                                    <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16"
+                                        width="16" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z">
+                                        </path>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="menu-section" id="acompanhamentos">
+            <h2>Acompanhamentos</h2>
+            <div class="card-list">
+
+                <div class="card">
+                    <img src="https://via.placeholder.com/980x980/e57373/ffffff?text=Batata+Frita" alt="Batata Frita">
+                    <h3>Batata Frita Clássica</h3>
+                    <p class="desc">Porção generosa de batatas fritas crocantes, temperadas com sal marinho.</p>
+                    <p class="price">R$ 12,00</p>
+                    <a href="#link-do-pedido-fritas" style="text-decoration: none;">
+                        <div class="button-buy">
+                            <div class="button-wrapper">
+                                <div class="text">Peça</div>
+                                <span class="icon">
+                                    <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16"
+                                        width="16" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z">
+                                        </path>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="card">
+                    <img src="https://via.placeholder.com/980x980/f44336/ffffff?text=Onion+Rings" alt="Onion Rings">
+                    <h3>Onion Rings</h3>
+                    <p class="desc">Anéis de cebola empanados e fritos. Acompanha molho barbecue.</p>
+                    <p class="price">R$ 18,90</p>
+                    <a href="#link-do-pedido-onion" style="text-decoration: none;">
+                        <div class="button-buy">
+                            <div class="button-wrapper">
+                                <div class="text">Peça</div>
+                                <span class="icon">
+                                    <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16"
+                                        width="16" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z">
+                                        </path>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="menu-section" id="bebidas">
+            <h2>Bebidas</h2>
+            <div class="card-list">
+
+                <div class="card">
+                    <img src="https://via.placeholder.com/980x980/00bcd4/ffffff?text=Coca-Cola" alt="Coca-Cola">
+                    <h3>Coca-Cola Lata</h3>
+                    <p class="desc">350ml. O clássico refrigerante, sempre gelado.</p>
+                    <p class="price">R$ 6,50</p>
+                    <a href="#link-do-pedido-coca" style="text-decoration: none;">
+                        <div class="button-buy">
+                            <div class="button-wrapper">
+                                <div class="text">Peça</div>
+                                <span class="icon">
+                                    <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16"
+                                        width="16" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z">
+                                        </path>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="card">
+                    <img src="https://via.placeholder.com/980x980/4caf50/ffffff?text=Agua" alt="Água Mineral">
+                    <h3>Água Mineral</h3>
+                    <p class="desc">500ml, sem gás.</p>
+                    <p class="price">R$ 4,00</p>
+                    <a href="#link-do-pedido-agua" style="text-decoration: none;">
+                        <div class="button-buy">
+                            <div class="button-wrapper">
+                                <div class="text">Peça</div>
+                                <span class="icon">
+                                    <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16"
+                                        width="16" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z">
+                                        </path>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+</body>
+
+</html>
